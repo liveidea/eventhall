@@ -1,5 +1,6 @@
 class Hall < ActiveRecord::Base
   belongs_to :user
+  belongs_to :city
   has_many :reviews
 
   has_and_belongs_to_many :options #, :join_table => "table_name", :foreign_key => "options_id"
