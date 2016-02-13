@@ -15,7 +15,7 @@ class HallsController < ApplicationController
 
   # GET /halls/new
   def new
-    @hall = Hall.new()
+    @hall = Hall.new
   end
 
   # GET /halls/1/edit
@@ -61,6 +61,10 @@ class HallsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

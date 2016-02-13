@@ -1,4 +1,4 @@
-<%= form_for @hall do |f| %>
+<%= simple_form_for @hall do |f| %>
 
   <% if @hall.errors.any? %>
     <div id="error_explanation">
@@ -13,19 +13,13 @@
    <% end %>
 
 
-    <%= f.label :name, "Title" %> <br>
-    <%= f.text_field :name %> <br>
-
-    <%= f.label :description, "Description" %> <br>
-    <%= f.text_area :description %> <br>
-
-    <%= f.label :price, "Price" %> <br>
-    <%= f.number_field :price %>
-
+    <%= f.input :name %> <br>
+    <%= f.input :description %> <br>
+    <%= f.input :price %>
     <%= f.file_field :photos %>
 
     <div class="actions">
-      <%= f.submit %>
+      <%= f.button :submit %>
     </div>
 <% end %>
 

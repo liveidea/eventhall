@@ -11,6 +11,7 @@ gem 'devise-bootstrap-views'
 gem 'carrierwave'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
+gem 'simple_form'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
