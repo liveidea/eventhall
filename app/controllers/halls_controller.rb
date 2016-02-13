@@ -16,16 +16,20 @@ class HallsController < ApplicationController
   # GET /halls/new
   def new
     @hall = Hall.new
+    # @cities = City.all
   end
 
   # GET /halls/1/edit
   def edit
+    @cities = @hall.city.find(params[:hall_id]) if @cities
   end
 
   # POST /halls
   # POST /halls.json
   def create
     @hall = Hall.new(hall_params)
+    @cities = City.all
+
 
     respond_to do |format|
       if @hall.save
@@ -74,6 +78,6 @@ class HallsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hall_params
-       params.require(:hall).permit(:description, :price, :photos, :name)
+       params.require(:hall).permit(:description, :price, :photos, :name, :city_id)
     end
 end

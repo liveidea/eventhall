@@ -13,13 +13,21 @@
    <% end %>
 
 
-    <%= f.input :name %> <br>
-    <%= f.input :description %> <br>
-    <%= f.input :price %>
+    <%= f.label :name, "Title" %> <br>
+    <%= f.text_field :name %> <br>
+
+    <%= f.label :description, "Description" %> <br>
+    <%= f.text_area :description %> <br>
+
+    <%= f.label :price, "Price" %> <br>
+    <%= f.number_field :price %>
+
     <%= f.file_field :photos %>
 
+    <%= select_tag 'city_id', options_for_select(@cities.map{ |u| [u.name, u.id] })  %>
+
     <div class="actions">
-      <%= f.button :submit %>
+      <%= f.submit %>
     </div>
 <% end %>
 
