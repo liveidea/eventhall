@@ -1,5 +1,6 @@
 class HallsController < ApplicationController
   before_action :set_hall, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:show, :index]
 
   # GET /halls
   # GET /halls.json
@@ -69,6 +70,6 @@ class HallsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hall_params
-       params.require(:hall).permit(:description, :price, :photos)
+       params.require(:hall).permit(:description, :price, :photos, :name)
     end
 end

@@ -1,4 +1,7 @@
 <%= form_for @hall do |f| %>
+    <%= f.label :name, "Title" %> <br>
+    <%= f.text_field :name %> <br>
+
     <%= f.label :description, "Description" %> <br>
     <%= f.text_area :description %> <br>
 
