@@ -1,0 +1,13 @@
+<% @halls.each do |hall| %>
+   <div id="hall">
+       <h2><%= hall.name %></h2>
+       <h4>$ <%= hall.price %></h4>
+       <%= image_tag hall.photos.url %>
+       <h5><%= hall.description %></h5>
+
+
+      <%= link_to 'Show', hall %> |
+      <%= link_to 'Edit', edit_hall_path(hall) %> |
+      <%= link_to 'Destroy', hall, method: :delete, data: { confirm: 'Are you sure?' } %>
+   </div>
+<% end %>
