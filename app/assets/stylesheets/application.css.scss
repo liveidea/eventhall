@@ -17,4 +17,7 @@
 #hall {
    border-bottom: 1px solid #dadada;
    padding: 10px;
+   &:hover {
+       background-color: rgba(128, 128, 128, 0.08);
+   }
 }
