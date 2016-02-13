@@ -1,17 +1,14 @@
-<%= form_for(@hall) do |f| %>
-  <% if @hall.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@hall.errors.count, "error") %> prohibited this hall from being saved:</h2>
+<%= form_for @hall do |f| %>
+    <%= f.label :description, "Description" %> <br>
+    <%= f.text_area :description %> <br>
 
-      <ul>
-      <% @hall.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <%= f.label :price, "Price" %> <br>
+    <%= f.number_field :price %>
+
+    <%= f.file_field :photos %>
+
+    <div class="actions">
+      <%= f.submit %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
+

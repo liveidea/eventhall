@@ -14,7 +14,7 @@ class HallsController < ApplicationController
 
   # GET /halls/new
   def new
-    @hall = Hall.new
+    @hall = Hall.new()
   end
 
   # GET /halls/1/edit
@@ -69,6 +69,6 @@ class HallsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hall_params
-      params[:hall]
+       params.require(:hall).permit(:description, :price, :photos)
     end
 end

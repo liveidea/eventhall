@@ -8,7 +8,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'devise'
 gem 'twitter-bootstrap-rails', '~> 3.2', '>= 3.2.2'
 gem 'devise-bootstrap-views'
-
+gem 'carrierwave'
+gem "mini_magick"
 
 
 gem 'uglifier', '>= 1.3.0'

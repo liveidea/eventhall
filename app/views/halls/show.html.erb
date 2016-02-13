@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%#= notice %></p>
+
+<%= @hall.price %>
+<%= @hall.description %>
+<%= image_tag @hall.photos_url.to_s if @hall.photos_url.present? %>
 
 <%= link_to 'Edit', edit_hall_path(@hall) %> |
 <%= link_to 'Back', halls_path %>
