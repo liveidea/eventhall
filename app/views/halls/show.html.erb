@@ -1,6 +1,8 @@
 
+<h3><%= @hall.name %></h3>
 $ <%= @hall.price %>  <br>
-<%= @hall.description %> <br>
+<h5>Description: <%= @hall.description %></h5>  <br>
+<h5>City: <%= @hall.city.name %> <br></h5>
 <%= image_tag @hall.photos_url.to_s if @hall.photos_url.present? %> <br>
 
 <%= link_to 'Edit', edit_hall_path(@hall) %> |

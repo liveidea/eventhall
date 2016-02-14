@@ -1,4 +1,4 @@
-<%= simple_form_for @hall do |f| %>
+<%= form_for @hall do |f| %>
 
   <% if @hall.errors.any? %>
     <div id="error_explanation">
@@ -24,7 +24,8 @@
 
     <%= f.file_field :photos %>
 
-    <%= select_tag 'city_id', options_for_select(@cities.map{ |u| [u.name, u.id] })  %>
+    <%= f.select 'city_id', @cities.map{ |u| [u.name, u.id] }%>
+
 
     <div class="actions">
       <%= f.submit %>
