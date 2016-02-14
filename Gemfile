@@ -25,13 +25,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #group :production do
 #  gem "pg"
 #end
-group :test do
-	gem 'rspec-rails'
-	gem 'factory_girl'
-end
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails'
+  gem 'factory_girl'
 end
 
 group :development do
