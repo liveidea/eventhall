@@ -14,6 +14,12 @@
  *= require_self
  *= require devise_bootstrap_views
  */
+
+* {
+    -webkit-font-smoothing: antialiased;
+     font-family: 'Questrial', sans-serif;
+}
+
 #hall {
    border-bottom: 1px solid #dadada;
    padding: 10px;
@@ -60,4 +66,29 @@ pagination a, .pagination span.current, .pagination span.gap {
     float: none;
     border: none;
 }
+}
+
+
+.navbar {
+    border: none;
+    border-radius: 0;
+}
+
+.navbar-default {
+    background-color: #FF5A5F;
+    .navbar-nav {
+        .active > a {
+                background-color: none !important;
+        }
+    }
+    .navbar-header {
+            a {
+                color: white;
+                font-family: 'Life Savers', cursive;
+                font-weight: 700;
+                &:hover {
+                    color: white;
+                }
+            }
+    }
 }

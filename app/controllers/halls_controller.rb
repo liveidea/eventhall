@@ -5,7 +5,7 @@ class HallsController < ApplicationController
   # GET /halls
   # GET /halls.json
   def index
-   @halls = Hall.order(:name).page(params[:page]).per(3)
+    @halls = Hall.order(:name).page(params[:page]).per(9)
   end
 
   # GET /halls/1
@@ -17,7 +17,7 @@ class HallsController < ApplicationController
   # GET /halls/new
   def new
     @hall = Hall.new
-     @cities = City.all
+    @cities = City.all
   end
 
   # GET /halls/1/edit
@@ -32,7 +32,6 @@ class HallsController < ApplicationController
   def create
     @hall = Hall.new(hall_params)
     @cities = City.all
-
 
     respond_to do |format|
       if @hall.save
