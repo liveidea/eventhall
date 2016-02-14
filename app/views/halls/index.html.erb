@@ -4,8 +4,8 @@
 
 <%= render @halls %>
 
-<%= paginate @halls %>
+<%= paginate @halls, :outer_window => 3 %>
 
 <br>
 
-<%= link_to 'New Hall', new_hall_path %>
+<%= link_to 'New Hall', new_hall_path, class: "btn btn-success" %>

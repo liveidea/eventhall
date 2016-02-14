@@ -3,9 +3,9 @@
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
       <%= image_tag hall.photos.url %>
-      <div class="caption">
+      <div class="caption text-center">
         <h3><%= hall.name %></h3>
-        <h5><%= hall.city.name %></h5>
+        <h5><%= hall.city.name if hall.city %></h5>
         <p><%= hall.description %></p>
         <p>
           <%= link_to 'Show', hall, class: "btn btn-success" %>
