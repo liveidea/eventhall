@@ -76,19 +76,33 @@ pagination a, .pagination span.current, .pagination span.gap {
 
 .navbar-default {
     background-color: #FF5A5F;
-    .navbar-nav {
-        .active > a {
-                background-color: none !important;
-        }
-    }
     .navbar-header {
             a {
                 color: white;
                 font-family: 'Life Savers', cursive;
                 font-weight: 700;
+                font-size: 30px;
                 &:hover {
                     color: white;
                 }
             }
     }
+    .navbar-nav {
+        li {
+            a {
+                color: white;
+                font-weight: 700;
+                font-size: 16px;
+                &:hover {
+                    text-shadow: 2px 2px red;
+                    color: white;
+                }
+            }
+        }
+    }
 }
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover {
+    background-color: transparent;
+}
+
