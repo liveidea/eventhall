@@ -24,7 +24,9 @@
 
     <%= f.file_field :photos %>
 
-    <%= f.select 'city_id', @cities.map{ |u| [u.name, u.id] }%>
+    <%= f.select :city_id, @cities.map{ |u| [u.name, u.id] }%>
+
+    <%#= f.select City.all.pluck(:name, :id)%>
 
 
     <div class="actions">

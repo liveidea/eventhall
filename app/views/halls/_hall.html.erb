@@ -1,14 +1,19 @@
+<div class="row">
 <% @halls.each do |hall| %>
-   <div id="hall">
-       <h2><%= hall.name %></h2>
-       <h3><%= hall.city.name %></h3>
-       <h4>$ <%= hall.price %></h4>
-       <%= image_tag hall.photos.url %>
-       <h5><%= hall.description %></h5>
-
-
-      <%= link_to 'Show', hall %> |
-      <%= link_to 'Edit', edit_hall_path(hall) %> |
-      <%= link_to 'Destroy', hall, method: :delete, data: { confirm: 'Are you sure?' } %>
-   </div>
-<% end %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag hall.photos.url %>
+      <div class="caption">
+        <h3><%= hall.name %></h3>
+        <h5><%= hall.city.name %></h5>
+        <p><%= hall.description %></p>
+        <p>
+          <%= link_to 'Show', hall, class: "btn btn-success" %>
+          <%= link_to 'Edit', edit_hall_path(hall), class: "btn btn-warning" %>
+          <%= link_to 'Destroy', hall, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <% end -%>
+</div>

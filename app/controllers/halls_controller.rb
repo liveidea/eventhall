@@ -17,7 +17,7 @@ class HallsController < ApplicationController
   # GET /halls/new
   def new
     @hall = Hall.new
-    # @cities = City.all
+     @cities = City.all
   end
 
   # GET /halls/1/edit
