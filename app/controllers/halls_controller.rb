@@ -5,7 +5,7 @@ class HallsController < ApplicationController
   # GET /halls
   # GET /halls.json
   def index
-   @halls = Hall.order("name").page(params[:page]).per(3)
+   @halls = Hall.order(:name).page(params[:page]).per(3)
   end
 
   # GET /halls/1
