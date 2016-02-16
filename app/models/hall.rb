@@ -7,7 +7,6 @@ class Hall < ActiveRecord::Base
 
 
   has_and_belongs_to_many :options #, :join_table => "table_name", :foreign_key => "options_id"
-
   has_and_belongs_to_many :event_types #, :join_table => "table_name", :foreign_key => "event_types #_id"
   has_and_belongs_to_many :venue_types
 

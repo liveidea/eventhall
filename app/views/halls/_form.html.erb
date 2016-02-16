@@ -20,15 +20,24 @@
     <%= f.text_area :description %> <br>
 
     <%= f.label :price, "Price" %> <br>
-    <%= f.number_field :price %>
+    <%= f.number_field :price %> <br> <br>
 
-    <%= f.file_field :photos %>
+    <%= f.file_field :photos %> <br>
 
-    <%= f.select :city_id, @cities.map{ |u| [u.name, u.id] }%> <br>
+    <%= f.label :city %>:
+    <%= f.select :city_id, @cities.map{ |u| [u.name, u.id] }%> <br> <br>
 
-    <%= f.select :venue_type_id, VenueType.all.pluck(:name, :id)%>
+    <%= f.label :venue_type %>:
+    <%= f.select :venue_type_id, VenueType.all.pluck(:name, :id)%> <!-- переробити на чекбокс -->
 
-    <%#= f.select City.all.pluck(:name, :id)%>
+    <%#= f.collection_check_boxes(:venue_types, :hall_id, VenueType.all, :id, :name) %>
+    <%#= f.collection_check_boxes :venue_type_id, @venue_types.map{ |v| [v.name, v.id]} %>
+     <br> <br>
+
+    <%= f.label :event_type %>:
+    <%#= f.collection_check_boxes(:event_types, :hall_id, EventType.all, :id, :name) %>
+    <%#= f.select :event_type_id, @event_types.map{ |u| [u.name, u.id] }%>
+    <%= f.select :event_type, EventType.all.pluck(:name, :id)%>
 
 
     <div class="actions">

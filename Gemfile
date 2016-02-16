@@ -14,6 +14,7 @@ gem 'bootstrap-kaminari-views'
 gem 'simple_form'
 gem "better_errors"
 
+
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 
@@ -37,5 +38,6 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem "awesome_print", require:"ap"
+  gem 'pry-rails'
 end
 
