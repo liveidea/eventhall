@@ -13,8 +13,6 @@ class Hall < ActiveRecord::Base
   validates :description, presence: true, length: {in: 5..255}
   validates :price, presence: true, numericality: true, length: {maximum: 4}
   validates :name, presence: true, length: {maximum: 30}
-  validates :event_types, presence: true
-  validates :venue_types, presence: true
   validates_presence_of :photos
 
 
