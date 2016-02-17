@@ -20,12 +20,61 @@
      font-family: 'Questrial', sans-serif;
 }
 
-#hall {
-   border-bottom: 1px solid #dadada;
-   padding: 10px;
-   &:hover {
-       background-color: rgba(128, 128, 128, 0.08);
-   }
+body {
+    background-color: #EDEFED;
+}
+
+.btn {
+    border-radius: 2px;
+    font-weight: 600;
+}
+
+.btn-danger {
+    background-color: rgba(201, 48, 44, 0.58);
+    color: black;
+    border: none;
+    color: white;
+    &:hover {
+        background-color: rgba(201, 48, 44, 0.80);
+        border-color: transparent;
+    }
+}
+
+.btn-success {
+    background-color: rgba(57,132,57,0.58);;
+    color: black;
+    border: none;
+    color: white;
+    &:hover {
+        background-color: rgba(57,132,57,0.80);
+        border-color: transparent;
+    }
+}
+
+.btn-warning {
+    background-color: rgba(236,151,31,0.58);;
+    color: black;
+    border: none;
+    color: white;
+    &:hover {
+        background-color: rgba(236,151,31,0.80);
+        border-color: transparent;
+    }
+}
+
+#price {
+    width: 100px;
+    height: 30px;
+    background-color: rgba(78, 74, 69, 0.65);
+    float: left;
+    margin-left: -13px;
+    margin-top: -60px;
+       p {
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.5em;
+        line-height: inherit;
+       }
 }
 
 

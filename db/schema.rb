@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160216144113) do
+ActiveRecord::Schema.define(version: 20160217141243) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -58,15 +58,6 @@ ActiveRecord::Schema.define(version: 20160216144113) do
 
   add_index "halls_venue_types", ["hall_id"], name: "index_halls_venue_types_on_hall_id"
   add_index "halls_venue_types", ["venue_type_id"], name: "index_halls_venue_types_on_venue_type_id"
-
-  create_table "options", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "hall_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "options", ["hall_id"], name: "index_options_on_hall_id"
 
   create_table "reviews", force: :cascade do |t|
     t.text     "description"

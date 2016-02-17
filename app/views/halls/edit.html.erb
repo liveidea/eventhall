@@ -3,4 +3,6 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @hall %> |
-<%= link_to 'Back', halls_path %>
+<%= link_to 'Back', halls_path %> |
+
+<%= link_to "Delete Venue", hall_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>

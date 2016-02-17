@@ -7,14 +7,16 @@
     <div class="thumbnail">
       <%= image_tag hall.photos.url %>
       <div class="caption text-center">
-        <h3><%= hall.name %></h3>
+        <h3><%= link_to hall.name, hall %></h3>
         <h5><%= hall.city.name if hall.city %></h5>
-        <strong>$ <%= hall.price %></strong>
+        <div id="price">
+          <p>
+            $ <%= hall.price %>
+          </p>
+        </div>
         <p><%= hall.description %></p>
         <p>
-          <%= link_to 'Show', hall, class: "btn btn-success" %>
           <%= link_to 'Edit', edit_hall_path(hall), class: "btn btn-warning" %>
-          <%= link_to 'Destroy', hall, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
         </p>
       </div>
     </div>
