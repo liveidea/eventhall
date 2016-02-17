@@ -7,14 +7,17 @@
     <div class="thumbnail">
       <%= image_tag hall.photos.url %>
       <div class="caption text-center">
-        <h3><%= link_to hall.name, hall %></h3>
+        <div class="hall-title">
+          <h3><%= link_to truncate(hall.name, length: 15), hall %></h3>
+        </div>
+
         <h5><%= hall.city.name if hall.city %></h5>
         <div id="price">
           <p>
             $ <%= hall.price %>
           </p>
         </div>
-        <p><%= hall.description %></p>
+        <p><%#= truncate(hall.description, length: 60) %></p>
         <p>
           <%= link_to 'Edit', edit_hall_path(hall), class: "btn btn-warning" %>
         </p>

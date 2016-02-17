@@ -12,7 +12,8 @@ gem 'carrierwave'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'simple_form'
-gem "better_errors"
+gem "mini_magick"
+
 
 
 gem 'uglifier', '>= 1.3.0'
@@ -39,5 +40,6 @@ group :development do
   gem 'spring'
   gem "awesome_print", require:"ap"
   gem 'pry-rails'
+  gem "better_errors"
 end
 
