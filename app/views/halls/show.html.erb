@@ -4,7 +4,7 @@ $ <%= @hall.price %>  <br>
 <h5>Description: <%= @hall.description %></h5>  <br>
 <h5>City: <%= @hall.city.name if @hall.city.name.present? %> <br></h5>
 <h5>Venue Type: <%= @hall.venue_types.name if @hall.venue_types %> <br></h5>
-<h5>Event Type: <%= @hall.event_type if @hall.event_type %> <br></h5>
+<h5>Event Type: <%= @hall.event_types.name if @hall.event_types %> <br></h5>
 <%= image_tag @hall.photos_url.to_s if @hall.photos_url.present? %> <br>
 
 <%= link_to 'Edit', edit_hall_path(@hall) %> |

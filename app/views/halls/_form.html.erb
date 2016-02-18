@@ -28,7 +28,8 @@
     <%= f.select :city_id, @cities.map{ |u| [u.name, u.id] }%> <br> <br>
 
     <%= f.label :venue_type %>:
-    <%= f.select :venue_type_id, VenueType.all.pluck(:name, :id)%> <!-- переробити на чекбокс -->
+    <%#= f.select :venue_type_id, VenueType.all.pluck(:name, :id)%> <!-- переробити на чекбокс -->
+    <%= f.collection_check_boxes :venue_type_ids, VenueType.all, :id, :name %>
 
     <%#= f.collection_check_boxes(:venue_types, :hall_id, VenueType.all, :id, :name) %>
     <%#= f.collection_check_boxes :venue_type_id, @venue_types.map{ |v| [v.name, v.id]} %>
@@ -36,8 +37,10 @@
 
     <%= f.label :event_type %>:
     <%#= f.collection_check_boxes(:event_types, :hall_id, EventType.all, :id, :name) %>
-    <%#= f.select :event_type_id, @event_types.map{ |u| [u.name, u.id] }%>
-    <%= f.select :event_type, EventType.all.pluck(:name, :id)%>
+    <%#= f.select :event_type, EventType.all.pluck(:name, :id)  %>
+    <%= f.collection_check_boxes :event_type_ids, EventType.all, :id, :name %>
+
+
 
 
     <div class="actions">
