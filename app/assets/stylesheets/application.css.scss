@@ -154,10 +154,6 @@ pagination a, .pagination span.current, .pagination span.gap {
                 color: white;
                 font-weight: 700;
                 font-size: 16px;
-                &:hover {
-                    text-shadow: 2px 2px red;
-                    color: white;
-                }
             }
         }
     }
@@ -165,5 +161,13 @@ pagination a, .pagination span.current, .pagination span.gap {
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover {
     background-color: transparent;
+}
+
+.dropdown-menu {
+    background-color: #FF5A5F;
+        li
+           a:hover {
+            background-color: #FF5A5F;
+        }
 }
 

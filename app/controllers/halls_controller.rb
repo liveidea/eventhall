@@ -4,13 +4,27 @@ class HallsController < ApplicationController
 
 
   def index
-    @halls = Hall.order(:name).page(params[:page]).per(9)
+    if params[:city].blank?
+      @halls = Hall.order(:name).page(params[:page]).per(9)
+    else
+      @city_id = City.find_by(name: params[:city]).id
+      @halls = Hall.where(city_id: @city_id).page(params[:page]).per(9)
+    end
+
+    if params[:venue_type].blank?
+      @halls = Hall.order(:name).page(params[:page]).per(9)
+    else
+      @venue_type_id = VenueType.find_by(name: params[:venue_type]).id
+      @halls = Hall.joins(:venue_types).where(:venue_types => {id: @venue_type_id}).page(params[:page])
+    end
+
   end
+
+
 
   def show
     #@city = @hall.city.find(params[:hall_id]) if @hall.city
-    #@venue_type = VenueType.find_by_id(params[:id])
-    #@event_type = EventType.find_by_id(params[:id])
+   # @hall.event_types = params[:event_type_ids]
   end
 
   def new
