@@ -6,21 +6,32 @@ class HallsController < ApplicationController
   def index
 
     @halls = Hall.order(:name).page(params[:page]).per(9)
+    @city = City.all
+    @venue_type = VenueType.all
+    @event_type = EventType.all
 
-    unless params[:city].blank?
+    if params[:city]
       city = City.find_by(name: params[:city])
+      # @halls = Hall.search(params[:search]).order("created_at DESC")
       @halls = @halls.where(:city => city)
+    else
+      @halls = Hall.order(:name).page(params[:page]).per(9)
     end
 
-    unless params[:venue_type].blank?
-      venue_type = VenueType.find_by(name: params[:venue_type])
-      @halls = @halls.joins(:venue_types).where(:venue_types => {id: venue_type}).page(params[:page]).per(9)
-    end
+    # unless params[:city].blank?
+    #   city = City.find_by(name: params[:city])
+    #   @halls = @halls.where(:city => city)
+    # end
 
-    unless params[:event_type].blank?
-      event_type = EventType.find_by(name: params[:event_type])
-      @halls = @halls.joins(:event_types).where(:event_types => {id: event_type}).page(params[:page]).per(9)
-    end
+    # unless params[:venue_type].blank?
+    #   venue_type = VenueType.find_by(name: params[:venue_type])
+    #   @halls = @halls.joins(:venue_types).where(:venue_types => {id: venue_type}).page(params[:page]).per(9)
+    # end
+
+    # unless params[:event_type].blank?
+    #   event_type = EventType.find_by(name: params[:event_type])
+    #   @halls = @halls.joins(:event_types).where(:event_types => {id: event_type}).page(params[:page]).per(9)
+    # end
   end
 
   def show

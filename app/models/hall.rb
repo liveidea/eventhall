@@ -15,6 +15,9 @@ class Hall < ActiveRecord::Base
   validates :name, presence: true, length: {maximum: 30}
   validates_presence_of :photos
 
-
+def self.search(query)
+     where(:city, query)
+   # where("city LIKE ?", "%#{query}%")
+end
 
 end
