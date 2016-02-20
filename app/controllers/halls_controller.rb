@@ -21,7 +21,6 @@ class HallsController < ApplicationController
       event_type = EventType.find_by(name: params[:event_type])
       @halls = @halls.joins(:event_types).where(:event_types => {id: event_type}).page(params[:page]).per(9)
     end
-
   end
 
   def show
