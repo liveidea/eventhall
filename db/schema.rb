@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160220110626) do
+=======
+ActiveRecord::Schema.define(version: 20160220121431) do
+>>>>>>> e03ee0c4731e72525d49c7fce98cefab61cfd899
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -53,10 +57,11 @@ ActiveRecord::Schema.define(version: 20160220110626) do
   end
 
   create_table "halls_venue_types", id: false, force: :cascade do |t|
-    t.integer "hall_id"
-    t.integer "venue_type_id"
+    t.integer "hall_id",       null: false
+    t.integer "venue_type_id", null: false
   end
 
+<<<<<<< HEAD
   add_index "halls_venue_types", ["hall_id"], name: "index_halls_venue_types_on_hall_id"
   add_index "halls_venue_types", ["venue_type_id"], name: "index_halls_venue_types_on_venue_type_id"
 
@@ -69,6 +74,8 @@ ActiveRecord::Schema.define(version: 20160220110626) do
 
   add_index "options", ["hall_id"], name: "index_options_on_hall_id"
 
+=======
+>>>>>>> e03ee0c4731e72525d49c7fce98cefab61cfd899
   create_table "reviews", force: :cascade do |t|
     t.text     "description"
     t.integer  "hall_id"
@@ -105,5 +112,10 @@ ActiveRecord::Schema.define(version: 20160220110626) do
   end
 
   add_index "venue_types", ["hall_id"], name: "index_venue_types_on_hall_id"
+
+  create_table "venue_types_halls", id: false, force: :cascade do |t|
+    t.integer "hall_id",       null: false
+    t.integer "venue_type_id", null: false
+  end
 
 end
