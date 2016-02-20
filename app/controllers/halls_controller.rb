@@ -4,30 +4,21 @@ class HallsController < ApplicationController
 
 
   def index
-    if params[:city].blank?
-      @halls = Hall.order(:name).page(params[:page]).per(9)
-    else
-      @city_id = City.find_by(name: params[:city]).id
-      @halls = Hall.joins(:city).where(:city => {id: @city_id}).page(params[:page]).per(9)
+
+    @halls = Hall.order(:name).page(params[:page]).per(9)
+
+    unless params[:city].blank?
+      city = City.find_by(name: params[:city])
+      @halls = @halls.where(:city => city)
     end
 
-    if params[:venue_type].blank?
-      @halls = Hall.order(:name).page(params[:page]).per(9)
-    else
+    unless params[:venue_type].blank?
       @venue_type_id = VenueType.find_by(name: params[:venue_type]).id
-      @halls = Hall.joins(:venue_types).where(:venue_types => {id: @venue_type_id}).page(params[:page]).per(9)
+      @halls = @halls.joins(:venue_types).where(:venue_types => {id: @venue_type_id}).page(params[:page]).per(9)
     end
 
-    if params[:event_type].blank?
-      @halls = Hall.order(:name).page(params[:page]).per(9)
-    else
-      @event_type_id = EventType.find_by(name: params[:event_type]).id
-      @halls = Hall.joins(:event_types).where(:event_types => {id: @event_type_id}).page(params[:page]).per(9)
-    end
 
   end
-
-
 
   def show
   end
@@ -50,7 +41,7 @@ class HallsController < ApplicationController
   def create
     @hall = Hall.create(hall_params)
     @cities = City.all
-     @venue_types = VenueType.all
+     # @venue_types = VenueType.all
     @hall.venue_type_ids = params[:venue_type_ids]
     @hall.event_type_ids = params[:event_type_ids]
     respond_to do |format|

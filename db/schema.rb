@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218155828) do
+ActiveRecord::Schema.define(version: 20160220121431) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -52,12 +52,9 @@ ActiveRecord::Schema.define(version: 20160218155828) do
   end
 
   create_table "halls_venue_types", id: false, force: :cascade do |t|
-    t.integer "hall_id"
-    t.integer "venue_type_id"
+    t.integer "hall_id",       null: false
+    t.integer "venue_type_id", null: false
   end
-
-  add_index "halls_venue_types", ["hall_id"], name: "index_halls_venue_types_on_hall_id"
-  add_index "halls_venue_types", ["venue_type_id"], name: "index_halls_venue_types_on_venue_type_id"
 
   create_table "reviews", force: :cascade do |t|
     t.text     "description"
@@ -95,5 +92,10 @@ ActiveRecord::Schema.define(version: 20160218155828) do
   end
 
   add_index "venue_types", ["hall_id"], name: "index_venue_types_on_hall_id"
+
+  create_table "venue_types_halls", id: false, force: :cascade do |t|
+    t.integer "hall_id",       null: false
+    t.integer "venue_type_id", null: false
+  end
 
 end
