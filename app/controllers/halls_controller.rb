@@ -23,6 +23,7 @@ class HallsController < ApplicationController
     #   @halls = @halls.where(:city => city)
     # end
 
+<<<<<<< HEAD
     # unless params[:venue_type].blank?
     #   venue_type = VenueType.find_by(name: params[:venue_type])
     #   @halls = @halls.joins(:venue_types).where(:venue_types => {id: venue_type}).page(params[:page]).per(9)
@@ -32,6 +33,16 @@ class HallsController < ApplicationController
     #   event_type = EventType.find_by(name: params[:event_type])
     #   @halls = @halls.joins(:event_types).where(:event_types => {id: event_type}).page(params[:page]).per(9)
     # end
+=======
+    unless params[:event_type].blank?
+      event_type = EventType.find_by(name: params[:event_type])
+      @halls = @halls.joins(:event_types).where(:event_types => {id: event_type}).page(params[:page]).per(9)
+    end
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1001fd1f4a71688e6ff70cb92e41ac514fa0a15d
+>>>>>>> 304a22128a1054c2f95f8347ae1538679a6fb6e6
   end
 
   def show
