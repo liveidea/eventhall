@@ -8,14 +8,14 @@ class HallsController < ApplicationController
       @halls = Hall.order(:name).page(params[:page]).per(9)
     else
       @city_id = City.find_by(name: params[:city]).id
-      @halls = Hall.where(city_id: @city_id).page(params[:page]).per(9)
+      @halls = Hall.joins(:city).where(:city => {id: @city_id}).page(params[:page]).per(9)
     end
 
     if params[:venue_type].blank?
       @halls = Hall.order(:name).page(params[:page]).per(9)
     else
       @venue_type_id = VenueType.find_by(name: params[:venue_type]).id
-      @halls = Hall.joins(:venue_types).where(:venue_types => {id: @venue_type_id}).page(params[:page])
+      @halls = Hall.joins(:venue_types).where(:venue_types => {id: @venue_type_id}).page(params[:page]).per(9)
     end
 
   end
