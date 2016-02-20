@@ -13,10 +13,14 @@ class HallsController < ApplicationController
     end
 
     unless params[:venue_type].blank?
-      @venue_type_id = VenueType.find_by(name: params[:venue_type]).id
-      @halls = @halls.joins(:venue_types).where(:venue_types => {id: @venue_type_id}).page(params[:page]).per(9)
+      venue_type = VenueType.find_by(name: params[:venue_type])
+      @halls = @halls.joins(:venue_types).where(:venue_types => {id: venue_type}).page(params[:page]).per(9)
     end
 
+    unless params[:event_type].blank?
+      event_type = EventType.find_by(name: params[:event_type])
+      @halls = @halls.joins(:event_types).where(:event_types => {id: event_type}).page(params[:page]).per(9)
+    end
 
   end
 
