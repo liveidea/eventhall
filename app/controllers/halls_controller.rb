@@ -18,13 +18,18 @@ class HallsController < ApplicationController
       @halls = Hall.joins(:venue_types).where(:venue_types => {id: @venue_type_id}).page(params[:page]).per(9)
     end
 
+    if params[:event_type].blank?
+      @halls = Hall.order(:name).page(params[:page]).per(9)
+    else
+      @event_type_id = EventType.find_by(name: params[:event_type]).id
+      @halls = Hall.joins(:event_types).where(:event_types => {id: @event_type_id}).page(params[:page]).per(9)
+    end
+
   end
 
 
 
   def show
-    #@city = @hall.city.find(params[:hall_id]) if @hall.city
-   # @hall.event_types = params[:event_type_ids]
   end
 
   def new
