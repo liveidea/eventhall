@@ -1,28 +1,35 @@
 
-<h1>Listing Halls</h1>
 
-<div class="row">
-<% @halls.each do |hall| %>
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <%= image_tag hall.photos.url %>
-      <div class="caption text-center">
-        <div class="hall-title">
-          <h3><%= link_to truncate(hall.name, length: 15), hall %></h3>
-        </div>
+<span class="label label-info"><%= params[:event_type] %><%= params[:venue_type] %><%= params[:city] %></span> <br>
 
-        <h5><%= hall.city.name if hall.city %></h5>
-        <div id="price">
-          <p>
-            $ <%= hall.price %>
-          </p>
+<% if @halls.count == 0 %>
+   <h1>There are currently no halls in this category</h1>
+<% else %>
+    <div class="row">
+      <% @halls.each do |hall| %>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <%= image_tag hall.photos.url %>
+            <div class="caption text-center">
+              <div class="hall-title">
+                <h3><%= link_to truncate(hall.name, length: 15), hall %></h3>
+              </div>
+
+              <h5><%= hall.city.name if hall.city %></h5>
+              <div id="price">
+                <p>
+                  $ <%= hall.price %>
+                </p>
+              </div>
+              <p><%#= truncate(hall.description, length: 60) %></p>
+            </div>
+          </div>
         </div>
-        <p><%#= truncate(hall.description, length: 60) %></p>
-      </div>
+        <% end -%>
     </div>
-  </div>
-  <% end -%>
-</div>
+<% end %>
+
+
 
 <%= paginate @halls  %>
 

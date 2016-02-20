@@ -24,6 +24,10 @@ body {
     background-color: #EDEFED;
 }
 
+.label {
+    font-size: 1.2em;
+}
+
 .btn {
     border-radius: 2px;
     font-weight: 600;
@@ -165,9 +169,16 @@ pagination a, .pagination span.current, .pagination span.gap {
 
 .dropdown-menu {
     background-color: #FF5A5F;
+    .active {
+        a {
+            background-color: #5BC0DE;
+        }
+    }
         li
            a:hover {
-            background-color: #FF5A5F;
+            background-color: #5BC0DE;
         }
 }
+
+
 
