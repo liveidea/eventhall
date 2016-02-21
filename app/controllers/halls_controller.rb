@@ -13,10 +13,10 @@ class HallsController < ApplicationController
 
 
       if !params[:city].blank?
-         session[:city] = params[:city]
-         city = City.find_by(name: params[:city])
-         @halls = @halls.where(:city => city)
-       end
+        session[:city] = params[:city]
+        city = City.find_by(name: params[:city])
+        @halls = @halls.where(:city => city)
+      end
 
       if !params[:venue_type].blank?
         venue_types = VenueType.where(id: params[:venue_type])
