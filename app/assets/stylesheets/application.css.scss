@@ -181,14 +181,40 @@ pagination a, .pagination span.current, .pagination span.gap {
 }
 
 
-.search {
+.search-wrapper {
     background-color: white;
     margin-top: -82px;
     margin-bottom: 25px;
     h2 {
         float: left;
+        margin-top: 44px;
     }
     .type {
         float: left;
+        margin-right: 27px;
+        list-style: none;
+        margin-left: -10px;
     }
+    select {
+        margin-left: 39px;
+        margin-top: 53px;
+    }
+    button {
+        margin-top: 45px;
+    }
+    .search {
+        margin: 0 auto;
+        display: table;
+        input[type="checkbox"] {
+                height: 1.25em;
+                width: 1.25em;
+                margin-right: 5px;
+                vertical-align: top;
+                background-color: #fff;
+        }
+    }
+}
+
+span.label {
+    margin-bottom: 20px;
 }
