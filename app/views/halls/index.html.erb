@@ -1,7 +1,7 @@
 <div class="search">
     <%= form_tag(halls_path, :method => "get", class: "navbar-form", id: "search-form") do %>
 
-<%#= select_tag "city", options_from_collection_for_select(City.all, "name", "name") %>
+<%= select_tag "city", options_from_collection_for_select(City.all, "name", "name") %>
 
             <ul>
              <%-selected_venues = params[:venue_type] || []%>
@@ -14,10 +14,11 @@
             </ul>
 
             <ul>
+             <%-selected_events = params[:event_type] || []%>
                 <% @event_type.each do |event_type| %>
                     <li>
-                      <%= check_box_tag 'event_types[]', event_type.id  -%>
-                      <%=  event_type.name -%>
+                      <%= check_box_tag 'event_type[]', event_type.id, selected_events.include?(event_type.id.to_s),  id: "event_type_#{event_type.id}"-%>
+                      <%= label_tag  "event_type_#{event_type.id}" , event_type.name-%>
                     </li>
                 <% end %>
             </ul>

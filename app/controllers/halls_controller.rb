@@ -11,13 +11,6 @@ class HallsController < ApplicationController
     @venue_type = VenueType.all
     @event_type = EventType.all
 
-   # filtering_params(params).each do |key, value|
-   #   @halls = @halls.public_send(key, value) if value.present?
-   # end
-   #   @halls = @halls.name(params[:name]) if params[:name].present?
-   # # @conferences = @conferences.sort_by_start_date(params[:start_date]) if params[:start_date].present?
-   # # @conferences = @conferences.sort_by_finish_date(params[:finish_date]) if params[:finish_date].present?
-
 
       if !params[:city].blank?
         session[:city] = params[:city]
@@ -30,6 +23,10 @@ class HallsController < ApplicationController
         @halls = @halls.joins(:venue_types).where(:venue_types => {id: venue_types})
       end
 
+      if !params[:event_type].blank?
+        event_types = EventType.where(id: params[:event_type])
+        @halls = @halls.joins(:event_types).where(:event_types => {id: event_types})
+      end
 
   end
 
