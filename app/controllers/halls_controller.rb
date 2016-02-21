@@ -6,69 +6,30 @@ class HallsController < ApplicationController
 
 
   def index
-
-
     @halls = Hall.order(:name).page(params[:page]).per(9)
-     @city = City.all
+    @city = City.all
     @venue_type = VenueType.all
     @event_type = EventType.all
 
-
-    if params[:city]
-       cities = City.where(name: params[:cities])
-       @halls = @halls.where(:city => cities)
-    @event_type = EventType.search(params[:search]).all
-    @venue_type = VenueType.search(params[:search]).all
-    else
-      @halls = Hall.order(:name).page(params[:page]).per(9)
-    end
+   # filtering_params(params).each do |key, value|
+   #   @halls = @halls.public_send(key, value) if value.present?
+   # end
+   #   @halls = @halls.name(params[:name]) if params[:name].present?
+   # # @conferences = @conferences.sort_by_start_date(params[:start_date]) if params[:start_date].present?
+   # # @conferences = @conferences.sort_by_finish_date(params[:finish_date]) if params[:finish_date].present?
 
 
+      if !params[:city].blank?
+        session[:city] = params[:city]
+        city = City.find_by(name: params[:city])
+        @halls = @halls.where(:city => city)
+      end
 
+      if !params[:venue_type].blank?
+        venue_types = VenueType.where(id: params[:venue_type])
+        @halls = @halls.joins(:venue_types).where(:venue_types => {id: venue_types})
+      end
 
-
-
-
-
-  #     if !params[:city].blank?
-  #       session[:city] = params[:city]
-  #       city = City.find_by(name: params[:city])
-  #       @halls = @halls.where(:city => city)
-  #     end
-
-  # if !params[:venue_type].blank?
-  #   session[:venue_type] = params[:venue_type]
-  #   venue_type = VenueType.find_by(name: params[:venue_type])
-  #   @halls = @halls.where(:venue_type => venue_type)
-  # end
-
-
-    # if params[:city]
-    #   city = City.find_by(name: params[:city])
-    #   # @halls = Hall.search(params[:search]).order("created_at DESC")
-    #   @halls = @halls.where(:city => city)
-    # else
-    #   @halls = Hall.order(:name).page(params[:page]).per(9)
-    # end
-
-    # if params[:event_type]
-    #    event_type = EventType.find_by(name: params[:event_type])
-    #   # @halls = Hall.search(params[:search]).order("created_at DESC")
-    #   @halls = @halls.joins(:event_types).where(:event_types => {id: event_type}).page(params[:page]).per(9)
-    # else
-    #   @halls = Hall.order(:name).page(params[:page]).per(9)
-    # end
-
-
-    # unless params[:city].blank?
-    #   city = City.find_by(name: params[:city])
-    #   @halls = @halls.where(:city => city)
-    # end
-
-    # unless params[:event_type].blank?
-    #   event_type = EventType.find_by(name: params[:event_type])
-    #   @halls = @halls.joins(:event_types).where(:event_types => {id: event_type}).page(params[:page]).per(9)
-    #end
 
   end
 

@@ -1,7 +1,9 @@
 class EventType < ActiveRecord::Base
-   has_and_belongs_to_many :halls #, :join_table => "table_name", :foreign_key => "halls #_id"
+   has_and_belongs_to_many :halls
 
-   def self.search(query)
-       where("name LIKE ?", "%#{query}%")
-   end
+
+def self.search search_term
+  return scoped unless search_term.present?
+  where(['name LIKE ?', "%#{search_term}%"])
+end
 end
