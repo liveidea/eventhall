@@ -1,40 +1,33 @@
 <div class="search">
     <%= form_tag(halls_path, :method => "get", class: "navbar-form", id: "search-form") do %>
-        <%#= text_field_tag :search, params[:search], placeholder: "Search Halls" %>
-        <ul>
-          <% @city.each do |city| %>
-              <li>
-                <%= check_box_tag 'city', city.name -%>
-                <%=  city.name -%>
-              </li>
-          <% end %>
-      </ul>
+
+<%= select_tag "city", options_from_collection_for_select(City.all, "name", "name") %>
 
             <ul>
-                <% @venue_type.each do |venue| %>
+             <%-selected_venues = params[:venue_type] || []%>
+                <% @venue_type.each do |venue_type| %>
                     <li>
-                      <%= check_box_tag 'venue_type', venue.name -%>
-                      <%=  venue.name -%>
+                      <%= check_box_tag 'venue_type[]', venue_type.id, selected_venues.include?(venue_type.id.to_s),  id: "venue_type_#{venue_type.id}"-%>
+                      <%= label_tag  "venue_type_#{venue_type.id}" , venue_type.name-%>
                     </li>
                 <% end %>
             </ul>
 
             <ul>
-                <% @event_type.each do |event| %>
+             <%-selected_events = params[:event_type] || []%>
+                <% @event_type.each do |event_type| %>
                     <li>
-                      <%= check_box_tag 'event_type', event.name -%>
-                      <%=  event.name -%>
+                      <%= check_box_tag 'event_type[]', event_type.id, selected_events.include?(event_type.id.to_s),  id: "event_type_#{event_type.id}"-%>
+                      <%= label_tag  "event_type_#{event_type.id}" , event_type.name-%>
                     </li>
                 <% end %>
             </ul>
-        <%=  %>
-
 
         <button class="btn" type="submit">Search</button>
   <% end %>
 </div>
 
-<span class="label label-info"><%= params[:event_type] %> >> <%= params[:venue_type] %> >> <%= params[:city] %></span> <br>
+<span class="label label-info"><%= params[:event_types] %> <%= params[:venue_types] %> <%= params[:city] %></span> <br>
 
 <% if @halls.count == 0 %>
    <h1>There are currently no halls in this category</h1>
@@ -56,6 +49,7 @@
                 </p>
               </div>
               <p><%#= truncate(hall.description, length: 60) %></p>
+              <%= link_to hall.checked ? "checked" : "unchecked", checked_hall_path(hall), method: :put, remote: true, id: "check" , data: {id: hall.id}%>
             </div>
           </div>
         </div>

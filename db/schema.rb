@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160220110626) do
+ActiveRecord::Schema.define(version: 20160221084529) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -34,40 +34,28 @@ ActiveRecord::Schema.define(version: 20160220110626) do
     t.integer "event_type_id", null: false
   end
 
-  create_table "hall_options", id: false, force: :cascade do |t|
-    t.integer "hall_id",   null: false
-    t.integer "option_id", null: false
+  create_table "hall_options", force: :cascade do |t|
   end
 
   create_table "halls", force: :cascade do |t|
     t.integer  "user_id"
     t.text     "description"
     t.integer  "price"
-    t.string   "event_type"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "event_type_ids"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "photos"
     t.string   "name"
     t.integer  "city_id"
-    t.integer  "venue_type_id"
+    t.integer  "venue_type_ids"
+    t.integer  "option_id"
+    t.boolean  "checked"
   end
 
   create_table "halls_venue_types", id: false, force: :cascade do |t|
-    t.integer "hall_id"
-    t.integer "venue_type_id"
+    t.integer "hall_id",       null: false
+    t.integer "venue_type_id", null: false
   end
-
-  add_index "halls_venue_types", ["hall_id"], name: "index_halls_venue_types_on_hall_id"
-  add_index "halls_venue_types", ["venue_type_id"], name: "index_halls_venue_types_on_venue_type_id"
-
-  create_table "options", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "hall_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "options", ["hall_id"], name: "index_options_on_hall_id"
 
   create_table "reviews", force: :cascade do |t|
     t.text     "description"
@@ -105,5 +93,10 @@ ActiveRecord::Schema.define(version: 20160220110626) do
   end
 
   add_index "venue_types", ["hall_id"], name: "index_venue_types_on_hall_id"
+
+  create_table "venue_types_halls", id: false, force: :cascade do |t|
+    t.integer "hall_id",       null: false
+    t.integer "venue_type_id", null: false
+  end
 
 end
