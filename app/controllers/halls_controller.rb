@@ -13,8 +13,7 @@ class HallsController < ApplicationController
 
 
       if !params[:city].blank?
-        session[:city] = params[:city]
-        city = City.find_by(name: params[:city])
+        city = City.where(id: params[:city])
         @halls = @halls.where(:city => city)
       end
 
