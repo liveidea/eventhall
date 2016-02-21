@@ -1,6 +1,7 @@
 <div class="search">
     <%= form_tag(halls_path, :method => "get", class: "navbar-form", id: "search-form") do %>
-        <%#= text_field_tag :search, params[:search], placeholder: "Search Halls" %>
+    <%= text_field_tag :name, params[:name] %>
+
         <ul>
           <% @city.each do |city| %>
               <li>
@@ -27,14 +28,12 @@
                     </li>
                 <% end %>
             </ul>
-        <%=  %>
-
 
         <button class="btn" type="submit">Search</button>
   <% end %>
 </div>
 
-<span class="label label-info"><%= params[:event_type] %> >> <%= params[:venue_type] %> >> <%= params[:city] %></span> <br>
+<span class="label label-info"><%= params[:event_type] %> <%= params[:venue_type] %> <%= params[:city] %></span> <br>
 
 <% if @halls.count == 0 %>
    <h1>There are currently no halls in this category</h1>
@@ -56,6 +55,7 @@
                 </p>
               </div>
               <p><%#= truncate(hall.description, length: 60) %></p>
+              <%= link_to hall.checked ? "checked" : "unchecked", checked_hall_path(hall), method: :put, remote: true, id: "check" , data: {id: hall.id}%>
             </div>
           </div>
         </div>

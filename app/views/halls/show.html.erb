@@ -7,6 +7,8 @@ $ <%= @hall.price %>  <br>
 <h5>Event Type: <%= @hall.event_types.name if @hall.event_types %> <br></h5>
 
 
+
+
 <%= image_tag @hall.photos_url if @hall.photos_url %> <br>
 
 <%= link_to 'Edit', edit_hall_path(@hall) %> |

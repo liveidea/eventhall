@@ -6,7 +6,11 @@ Rails.application.routes.draw do
 
   root  "halls#index"
 
-  resources :halls
+  resources :halls do
+     member do
+        put :checked
+     end
+  end
 
 
 end
