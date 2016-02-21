@@ -1,6 +1,40 @@
+<div class="search">
+    <%= form_tag(halls_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+        <%#= text_field_tag :search, params[:search], placeholder: "Search Halls" %>
+        <ul>
+          <% @city.each do |city| %>
+              <li>
+                <%= check_box_tag 'city', city.name -%>
+                <%=  city.name -%>
+              </li>
+          <% end %>
+      </ul>
+
+            <ul>
+                <% @venue_type.each do |venue| %>
+                    <li>
+                      <%= check_box_tag 'venue_type', venue.name -%>
+                      <%=  venue.name -%>
+                    </li>
+                <% end %>
+            </ul>
+
+            <ul>
+                <% @event_type.each do |event| %>
+                    <li>
+                      <%= check_box_tag 'event_type', event.name -%>
+                      <%=  event.name -%>
+                    </li>
+                <% end %>
+            </ul>
+        <%=  %>
 
 
-<span class="label label-info"><%= params[:event_type] %><%= params[:venue_type] %><%= params[:city] %></span> <br>
+        <button class="btn" type="submit">Search</button>
+  <% end %>
+</div>
+
+<span class="label label-info"><%= params[:event_type] %> >> <%= params[:venue_type] %> >> <%= params[:city] %></span> <br>
 
 <% if @halls.count == 0 %>
    <h1>There are currently no halls in this category</h1>
@@ -31,7 +65,7 @@
 
 
 
-<%= paginate @halls  %>
+<%#= paginate @halls  %>
 
 <br>
 
