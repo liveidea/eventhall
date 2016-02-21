@@ -3,11 +3,10 @@
 $ <%= @hall.price %>  <br>
 <h5>Description: <%= @hall.description %></h5>  <br>
 <h5>City: <%= @hall.city.name if @hall.city.name %> <br></h5>
-<h5>Venue Type: <% @hall.venue_types.each do |v| %>
+<h5>Venue Types: <% @hall.venue_types.each do |v| %>
    <%= v.name %>
 <% end %> <br></h5>
-<h5>Event Type: <% @hall.event_types.each do |e| %>
-   <%= e.name %>
+<h5>Event Types: <% @hall.event_types.map %>
 <% end -%> <br></h5>
 
 

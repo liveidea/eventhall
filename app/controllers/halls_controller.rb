@@ -11,6 +11,9 @@ class HallsController < ApplicationController
     @venue_type = VenueType.all
     @event_type = EventType.all
 
+    @selected_venue_types = VenueType.where(id: params[:venue_type])
+    @selected_event_types = EventType.where(id: params[:event_type])
+
 
       if !params[:city].blank?
          session[:city] = params[:city]

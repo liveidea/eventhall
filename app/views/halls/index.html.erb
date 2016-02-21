@@ -1,6 +1,17 @@
 <%= render "search" %>
 
-<span class="<%= 'label label-info' if params[:event_type] || params[:city] || params[:venue_type]  %>"><%= params[:event_type] %> <%= params[:venue_type] %> <%= params[:city] %></span> <br><br>
+<span class="<%= 'label label-info' if params[:event_type] || params[:city] || params[:venue_type]  %>">
+
+      <% @selected_venue_types.each do |v| %>
+        <%= v.name %>
+      <% end -%>
+
+      <% @selected_event_types.each do |e| %>
+        <%= e.name %>
+      <% end -%>
+
+      <%= params[:city] %>
+</span> <br><br>
 
 
 <% if @halls.count == 0 %>
