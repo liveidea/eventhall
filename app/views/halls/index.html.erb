@@ -27,7 +27,7 @@
   <% end %>
 </div>
 
-<span class="label label-info"><%= params[:event_types] %> <%= params[:venue_types] %> <%= params[:city] %></span> <br>
+<span class="label label-info"><%= params[:event_type] %> <%= params[:venue_type] %> <%= params[:city] %></span> <br>
 
 <% if @halls.count == 0 %>
    <h1>There are currently no halls in this category</h1>
@@ -59,7 +59,7 @@
 
 
 
-<%#= paginate @halls  %>
+<%= paginate @halls  %>
 
 <br>
 
