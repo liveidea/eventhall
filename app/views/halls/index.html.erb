@@ -1,6 +1,7 @@
 <%= render "search" %>
 
-<span class="label label-info"><%= params[:event_type] %> <%= params[:venue_type] %> <%= params[:city] %></span> <br>
+<span class="<%= 'label label-info' if params[:event_type] || params[:city] || params[:venue_type]  %>"><%= params[:event_type] %> <%= params[:venue_type] %> <%= params[:city] %></span> <br><br>
+
 
 <% if @halls.count == 0 %>
    <h1>There are currently no halls in this category</h1>

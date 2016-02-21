@@ -1,5 +1,6 @@
-<div class="search clearfix">
-    <%= form_tag(halls_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+<div class="search-wrapper clearfix">
+  <div class="search">
+      <%= form_tag(halls_path, :method => "get", class: "navbar-form", id: "search-form") do %>
 
             <h2>I am searching for </h2>
 
@@ -31,6 +32,7 @@
               <%= select_tag "city", options_from_collection_for_select(City.all, "name", "name") %>
             </div>
 
-        <button class="btn" type="submit">Search</button>
+        <button class="btn btn-primary" type="submit">Search</button>
   <% end %>
+  </div>
 </div>
