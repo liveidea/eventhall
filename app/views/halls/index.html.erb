@@ -1,33 +1,6 @@
-<div class="search">
-    <%= form_tag(halls_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+<%= render "search" %>
 
-<%= select_tag "city", options_from_collection_for_select(City.all, "name", "name") %>
-
-            <ul>
-             <%-selected_venues = params[:venue_type] || []%>
-                <% @venue_type.each do |venue_type| %>
-                    <li>
-                      <%= check_box_tag 'venue_type[]', venue_type.id, selected_venues.include?(venue_type.id.to_s),  id: "venue_type_#{venue_type.id}"-%>
-                      <%= label_tag  "venue_type_#{venue_type.id}" , venue_type.name-%>
-                    </li>
-                <% end %>
-            </ul>
-
-            <ul>
-             <%-selected_events = params[:event_type] || []%>
-                <% @event_type.each do |event_type| %>
-                    <li>
-                      <%= check_box_tag 'event_type[]', event_type.id, selected_events.include?(event_type.id.to_s),  id: "event_type_#{event_type.id}"-%>
-                      <%= label_tag  "event_type_#{event_type.id}" , event_type.name-%>
-                    </li>
-                <% end %>
-            </ul>
-
-        <button class="btn" type="submit">Search</button>
-  <% end %>
-</div>
-
-<span class="label label-info"><%= params[:event_types] %> <%= params[:venue_types] %> <%= params[:city] %></span> <br>
+<span class="label label-info"><%= params[:event_type] %> <%= params[:venue_type] %> <%= params[:city] %></span> <br>
 
 <% if @halls.count == 0 %>
    <h1>There are currently no halls in this category</h1>
@@ -59,7 +32,7 @@
 
 
 
-<%#= paginate @halls  %>
+<%= paginate @halls  %>
 
 <br>
 
