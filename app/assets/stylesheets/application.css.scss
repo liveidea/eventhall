@@ -21,7 +21,7 @@
 }
 
 body {
-    background-color: #EDEFED;
+    background-color: #fff;
 }
 
 .label {
@@ -219,8 +219,30 @@ span.label {
     margin-bottom: 20px;
 }
 
-.hall-wrapper {
+
+// SHOW HALL //
+
+.show-hall-wrapper {
+    .col-md-9 {
+        margin-top: -18px;
+    }
+    .price {
+        font-weight: 700;
+        font-size: 2em;
+    }
     .label {
         margin-right: 6px;
+    }
+    h3 {
+        font-size: 2em;
+    }
+    .description {
+        margin-bottom: 20px;
+        h5 {
+            font-size: 1.1em;
+        }
+    }
+    .col-md-6 {
+        font-size: 1.1em;
     }
 }

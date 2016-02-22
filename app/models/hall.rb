@@ -6,9 +6,8 @@ class Hall < ActiveRecord::Base
   mount_uploader :photos, PhotosUploader
 
 
-
-  has_and_belongs_to_many :event_types #, :join_table => "table_name", :foreign_key => "event_types #_id"
-  has_and_belongs_to_many :venue_types #, :join_table => "venue_types_halls", :foreign_key => "venue_type_id"
+  has_and_belongs_to_many :event_types
+  has_and_belongs_to_many :venue_types
 
   validates :description, presence: true, length: {in: 5..255}
   validates :price, presence: true, numericality: true, length: {maximum: 4}
