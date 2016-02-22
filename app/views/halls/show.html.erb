@@ -31,6 +31,13 @@
                <h5 class="label label-info"> <%= e.name %> </h5>
          <% end %> <br> <br>
 
+         Contact the owner:
+         <%= @hall.user.name %>
+         <%= @hall.user.email %>
+         <%= @hall.user.phone %> <br>
+         <br>
+         <br>
+
          <%= link_to 'Edit', edit_hall_path(@hall), class: "btn btn-default" %> |
          <%= link_to 'Back', halls_path, class: "btn btn-default" %>
       </div>

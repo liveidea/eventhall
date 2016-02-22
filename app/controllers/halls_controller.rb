@@ -47,7 +47,7 @@ class HallsController < ApplicationController
   end
 
   def new
-    @hall = Hall.new
+    @hall = current_user.halls.build
     @cities = City.all
     @venue_types = VenueType.all.map{|v| [v.name, v.id]}
     @event_type = EventType.all.map{|e| [e.name, e.id]}
@@ -55,16 +55,13 @@ class HallsController < ApplicationController
 
   def edit
      @cities = City.all
-     # @city = City.find_by_id(params[:id])
-      #@venue_types = VenueType.all
      @venue_type = VenueType.find_by_id(params[:id])
   end
 
 
   def create
-    @hall = Hall.create(hall_params)
+    @hall = current_user.halls.create(hall_params)
     @cities = City.all
-     # @venue_types = VenueType.all
     @hall.venue_type_ids = params[:venue_type_ids]
     @hall.event_type_ids = params[:event_type_ids]
     respond_to do |format|
