@@ -12,35 +12,54 @@
      </div>
    <% end %>
 
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <%= f.label :name, "Title" %> <br>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
 
-    <%= f.label :name, "Title" %> <br>
-    <%= f.text_field :name %> <br>
+    <div class="form-group">
+      <%= f.label :description, "Description" %>
+      <%= f.text_area :description, class: "form-control"  %>
+    </div>
 
-    <%= f.label :description, "Description" %> <br>
-    <%= f.text_area :description %> <br>
-
-    <%= f.label :price, "Price" %> <br>
-    <%= f.number_field :price %> <br> <br>
+    <div class="form-group input-group">
+      <span class="input-group-addon">UAH</span>
+      <%= f.number_field :price, class: "form-control"  %>
+    </div>
 
     <%= f.file_field :photos %> <br>
 
-    <%= f.label :city %>:
-    <%= f.select :city_id, @cities.map{ |u| [u.name, u.id] }%> <br> <br>
+    <div class="form-group">
+      <%= f.label :city %>:
+      <%= f.select :city_id, @cities.map{ |u| [u.name, u.id] }, class: "selectpicker" %>
+    </div> <br>
 
-    <%= f.label :venue_type %>:
-    <%= f.collection_check_boxes :venue_type_ids, VenueType.all, :id, :name %>
+    <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :venue_type %>:
+          <div class="checkbox checkbox-primary">
+            <%= f.collection_check_boxes :venue_type_ids, VenueType.all, :id, :name , class: "styled" %>
+          </div>
+        </div>
+    </div>
 
-     <br> <br>
 
-    <%= f.label :event_type %>:
-    <%= f.collection_check_boxes :event_type_ids, EventType.all, :id, :name %>
-
-
-
-
+    <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :event_type %>:
+           <div class="checkbox checkbox-primary">
+              <%= f.collection_check_boxes :event_type_ids, EventType.all, :id, :name, class: "styled"  %>
+          </div>
+        </div>
+    </div>
 
     <div class="actions">
       <%= f.submit %>
     </div>
+  </div>
+</div>
+
 <% end %>
 
