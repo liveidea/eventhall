@@ -55,7 +55,8 @@ class HallsController < ApplicationController
 
   def edit
      @cities = City.all
-     @venue_type = VenueType.find_by_id(params[:id])
+     @venue_types = VenueType.all
+     @event_types = EventType.all
   end
 
 

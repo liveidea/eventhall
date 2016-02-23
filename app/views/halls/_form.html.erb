@@ -31,27 +31,29 @@
 
     <%= f.file_field :photos %> <br>
 
-    <div class="form-group">
-      <%= f.label :city %>:
-      <%= f.select :city_id, @cities.map{ |u| [u.name, u.id] }, class: "selectpicker" %>
-    </div> <br>
-
-    <div class="col-md-6">
-        <div class="form-group">
-          <%= f.label :venue_type %>:
-          <div class="checkbox checkbox-primary">
-            <%= f.collection_check_boxes :venue_type_ids, VenueType.all, :id, :name , class: "styled" %>
+    <div class="row">
+          <div class="col-md-4">
+              <div class="form-group">
+                <%= f.label :city %>:
+                <%= f.select :city_id, @cities.map{ |u| [u.name, u.id] }, {}, {class: "selectpicker"} %>
+              </div>
           </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+              <%= f.label :venue_type %>:
+                <%#= f.collection_check_boxes :venue_type_ids, VenueType.all, :id, :name , class: "styled" %>
+                 <%= f.select :venue_type_ids, @venue_types.map{ |u| [u.name, u.id] }, {}, {class: "selectpicker", :multiple => true} %>
+            </div>
         </div>
-    </div>
 
 
-    <div class="col-md-6">
-        <div class="form-group">
-          <%= f.label :event_type %>:
-           <div class="checkbox checkbox-primary">
-              <%= f.collection_check_boxes :event_type_ids, EventType.all, :id, :name, class: "styled"  %>
-          </div>
+        <div class="col-md-4">
+            <div class="form-group">
+               <%= f.label :event_type %>:
+                  <%#= f.collection_check_boxes :event_type_ids, EventType.all, :id, :name, class: "styled"  %>
+                 <%= f.select :event_type_ids, @event_types.map{ |u| [u.name, u.id] }, {}, {class: "selectpicker", :multiple => true} %>
+            </div>
         </div>
     </div>
 
