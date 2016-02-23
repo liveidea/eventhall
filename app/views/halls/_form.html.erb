@@ -1,4 +1,4 @@
-<%= form_for @hall do |f| %>
+<%= form_for @hall,  :html => {:multipart => true}  do |f| %>
 
   <% if @hall.errors.any? %>
     <div id="error_explanation">
@@ -63,7 +63,12 @@
         </div>
     </div>
 
-    <%= f.file_field :photos %> <br>
+    <%= f.file_field :photos, :onchange => "previewFile()", :type => "file" %> <br>
+    <div class="img-preview">
+       <img src=""  alt="">
+    </div>
+
+
 
     <div class="actions">
       <%= f.submit "Save", class: "btn btn-success" %>
