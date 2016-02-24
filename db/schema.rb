@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221084529) do
+ActiveRecord::Schema.define(version: 20160224122105) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -26,34 +26,27 @@ ActiveRecord::Schema.define(version: 20160221084529) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
+  end
+
+  create_table "event_types_halls", force: :cascade do |t|
+    t.integer "hall_id"
+    t.integer "event_type_id"
   end
 
   create_table "hall_event_types", id: false, force: :cascade do |t|
-=======
-    t.integer  "hall_id"
-  end
-
-  create_table "event_types_halls", id: false, force: :cascade do |t|
->>>>>>> 97370dee03a4d6360088c9b95ef9bb8d12c8fb62
     t.integer "hall_id",       null: false
     t.integer "event_type_id", null: false
   end
 
-<<<<<<< HEAD
   create_table "hall_options", id: false, force: :cascade do |t|
     t.integer "hall_id",   null: false
     t.integer "option_id", null: false
-=======
-  create_table "hall_options", force: :cascade do |t|
->>>>>>> 97370dee03a4d6360088c9b95ef9bb8d12c8fb62
   end
 
   create_table "halls", force: :cascade do |t|
     t.integer  "user_id"
     t.text     "description"
     t.integer  "price"
-<<<<<<< HEAD
     t.string   "event_type"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -64,24 +57,11 @@ ActiveRecord::Schema.define(version: 20160221084529) do
     t.boolean  "checked"
   end
 
-=======
-    t.string   "event_type_ids"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.string   "photos"
-    t.string   "name"
-    t.integer  "city_id"
-    t.integer  "venue_type_ids"
-    t.integer  "option_id"
-    t.boolean  "checked"
+  create_table "halls_venue_types", force: :cascade do |t|
+    t.integer "hall_id"
+    t.integer "venue_type_id"
   end
 
-  create_table "halls_venue_types", id: false, force: :cascade do |t|
-    t.integer "hall_id",       null: false
-    t.integer "venue_type_id", null: false
-  end
-
->>>>>>> 97370dee03a4d6360088c9b95ef9bb8d12c8fb62
   create_table "reviews", force: :cascade do |t|
     t.text     "description"
     t.integer  "hall_id"
@@ -119,12 +99,4 @@ ActiveRecord::Schema.define(version: 20160221084529) do
 
   add_index "venue_types", ["hall_id"], name: "index_venue_types_on_hall_id"
 
-<<<<<<< HEAD
-=======
-  create_table "venue_types_halls", id: false, force: :cascade do |t|
-    t.integer "hall_id",       null: false
-    t.integer "venue_type_id", null: false
-  end
-
->>>>>>> 97370dee03a4d6360088c9b95ef9bb8d12c8fb62
 end
