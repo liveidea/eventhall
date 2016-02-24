@@ -1,0 +1,46 @@
+<div class="show-hall-wrapper">
+   <div class="row">
+      <div class="col-md-6">
+         <div class="row">
+            <div class="col-md-9">
+              <h3><%= @hall.name %></h3>
+            </div>
+
+            <div class="col-md-3">
+               <p class="price">$ <%= @hall.price %></p>
+            </div>
+         </div>
+           <%= image_tag @hall.photos_url if @hall.photos_url %> <br>
+      </div>
+
+      <div class="col-md-6">
+         <div class="description">
+            <h5>Description: </h5>
+            <%= @hall.description %>
+         </div>
+
+         City: <h5 class="label label-info"> <%= @hall.city.name if @hall.city.name %> <br></h5> <br>
+
+         Venue Type:
+         <% @hall.venue_types.each do |v| %>
+            <h5 class="label label-info"> <%= v.name %> </h5>
+         <% end %>  <br><br>
+
+         Event Type:
+          <% @hall.event_types.each do |e| %>
+               <h5 class="label label-info"> <%= e.name %> </h5>
+         <% end %> <br> <br>
+
+         Contact the owner:
+         <%= @hall.user.name %>
+         <%= @hall.user.email %>
+         <%= @hall.user.phone %> <br>
+         <br>
+         <br>
+
+         <%= link_to 'Edit', edit_hall_path(@hall), class: "btn btn-default" %> |
+         <%= link_to 'Back', halls_path, class: "btn btn-default" %>
+      </div>
+   </div>
+</div>
+

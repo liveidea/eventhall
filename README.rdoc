@@ -1,0 +1,6 @@
+# TO-DO:
+
+
+  - Fix Hall show page (Venue/Event type.)
+  - Style the Index page
+  - Style Show page

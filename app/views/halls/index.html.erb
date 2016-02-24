@@ -1,0 +1,51 @@
+<%= render "search" %>
+
+<span class="<%= 'label label-info' if params[:event_type] || params[:city] || params[:venue_type]  %>">
+
+      <% @selected_venue_types.each do |v| %>
+        <%= v.name %>
+      <% end -%>
+
+      <% @selected_event_types.each do |e| %>
+        <%= e.name %>
+      <% end -%>
+
+      <%= params[:city] %>
+</span> <br><br>
+
+
+<% if @halls.count == 0 %>
+   <h1>There are currently no halls in this category</h1>
+<% else %>
+    <div class="row">
+      <% @halls.each do |hall| %>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <%= image_tag hall.photos.url %>
+            <div class="caption text-center">
+              <div class="hall-title">
+                <h3><%= link_to truncate(hall.name, length: 15), hall %></h3>
+              </div>
+
+              <h5><%= hall.city.name if hall.city %></h5>
+              <div id="price">
+                <p>
+                  $ <%= hall.price %>
+                </p>
+              </div>
+              <p><%#= truncate(hall.description, length: 60) %></p>
+              <%#= link_to hall.checked ? "checked" : "unchecked", checked_hall_path(hall), method: :put, remote: true, id: "check" , data: {id: hall.id}%>
+            </div>
+          </div>
+        </div>
+        <% end -%>
+    </div>
+<% end %>
+
+
+
+<%= paginate @halls  %>
+
+<br>
+
+<%= link_to 'New Hall', new_hall_path, class: "btn btn-success" %>

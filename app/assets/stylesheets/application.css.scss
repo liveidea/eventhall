@@ -1,0 +1,254 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require devise_bootstrap_views
+ */
+
+* {
+    -webkit-font-smoothing: antialiased;
+     font-family: 'Questrial', sans-serif;
+}
+
+body {
+    background-color: #F5F5F6;
+}
+
+.label {
+    font-size: 1.2em;
+}
+
+.btn {
+    border-radius: 2px;
+    font-weight: 600;
+}
+
+.btn-danger {
+    background-color: rgba(201, 48, 44, 0.58);
+    color: black;
+    border: none;
+    color: white;
+    &:hover {
+        background-color: rgba(201, 48, 44, 0.80);
+        border-color: transparent;
+    }
+}
+
+.btn-success {
+    background-color: rgba(57,132,57,0.58);;
+    color: black;
+    border: none;
+    color: white;
+    &:hover {
+        background-color: rgba(57,132,57,0.80);
+        border-color: transparent;
+    }
+}
+
+.btn-warning {
+    background-color: rgba(236,151,31,0.58);;
+    color: black;
+    border: none;
+    color: white;
+    &:hover {
+        background-color: rgba(236,151,31,0.80);
+        border-color: transparent;
+    }
+}
+
+.caption {
+    .hall-title {
+        margin-left: 90px;
+        h3 {
+                a {
+                    font-size: 1.4em;
+                    line-height: 10px;
+                }
+            }
+    }
+}
+
+#price {
+    width: 100px;
+    height: 30px;
+    background-color: rgba(78, 74, 69, 0.65);
+    float: left;
+    margin-left: -13px;
+    margin-top: -70px;
+       p {
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.5em;
+        line-height: inherit;
+       }
+}
+
+
+pagination a, .pagination span.current, .pagination span.gap {
+    float: left;
+    padding: 0 14px;
+    line-height: 38px;
+    text-decoration: none;
+    background-color: white;
+    border: 1px solid #DDD;
+    border-left-width: 0;
+}
+
+.pagination {
+    border-left: 1px solid #ddd;
+.first{
+    padding : 0;
+    float: none;
+    border: none;
+}
+.prev {
+    padding : 0;
+    float: none;
+    border: none;
+}
+.page{
+    padding : 0;
+    float: none;
+    border: none;
+}
+.next{
+    padding : 0;
+    float: none;
+    border: none;
+}
+.last{
+    padding : 0;
+    float: none;
+    border: none;
+}
+}
+
+
+.navbar {
+    border: none;
+    border-radius: 0;
+}
+
+.navbar-default {
+    background-color: #FF5A5F;
+    .navbar-header {
+            a {
+                color: white;
+                font-family: 'Life Savers', cursive;
+                font-weight: 700;
+                font-size: 30px;
+                &:hover {
+                    color: white;
+                }
+            }
+    }
+    .navbar-nav {
+        li {
+            a {
+                color: white;
+                font-weight: 700;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover {
+    background-color: transparent;
+}
+
+.dropdown-menu {
+    background-color: #FF5A5F;
+    .active {
+        a {
+            background-color: #5BC0DE;
+        }
+    }
+        li
+           a:hover {
+            background-color: #5BC0DE;
+        }
+}
+
+
+.search-wrapper {
+    background-color: white;
+    margin-top: -82px;
+    margin-bottom: 25px;
+    h2 {
+        float: left;
+        margin-top: 44px;
+    }
+    .type {
+        float: left;
+        margin-right: 27px;
+        list-style: none;
+        margin-left: -10px;
+    }
+    select {
+        margin-left: 39px;
+        margin-top: 53px;
+    }
+    button {
+        margin-top: 45px;
+    }
+    .search {
+        margin: 0 auto;
+        display: table;
+        input[type="checkbox"] {
+                height: 1.25em;
+                width: 1.25em;
+                margin-right: 5px;
+                vertical-align: top;
+                background-color: #fff;
+        }
+    }
+}
+
+span.label {
+    margin-bottom: 20px;
+}
+
+
+// SHOW HALL //
+
+.show-hall-wrapper {
+    .col-md-9 {
+        margin-top: -18px;
+    }
+    .price {
+        font-weight: 700;
+        font-size: 2em;
+    }
+    .label {
+        margin-right: 6px;
+    }
+    h3 {
+        font-size: 2em;
+    }
+    .description {
+        margin-bottom: 20px;
+        h5 {
+            font-size: 1.1em;
+        }
+    }
+    .col-md-6 {
+        font-size: 1.1em;
+    }
+}
+
+
+.img-preview img{
+    height:200px;
+    width: 300px;
+}

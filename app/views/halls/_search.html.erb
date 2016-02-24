@@ -1,0 +1,38 @@
+<div class="search-wrapper clearfix">
+  <div class="search">
+      <%= form_tag(halls_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+
+            <h2>I am searching for </h2>
+
+            <ul class="type">
+             <%-selected_venues = params[:venue_type] || []%>
+                <% @venue_type.each do |venue_type| %>
+                    <li>
+                      <%= check_box_tag 'venue_type[]', venue_type.id, selected_venues.include?(venue_type.id.to_s),  id: "venue_type_#{venue_type.id}"-%>
+                      <%= label_tag  "venue_type_#{venue_type.id}" , venue_type.name-%>
+                    </li>
+                <% end %>
+            </ul>
+
+            <h2>for my</h2>
+
+            <ul class="type">
+             <%-selected_events = params[:event_type] || []%>
+                <% @event_type.each do |event_type| %>
+                    <li>
+                      <%= check_box_tag 'event_type[]', event_type.id, selected_events.include?(event_type.id.to_s),  id: "event_type_#{event_type.id}"-%>
+                      <%= label_tag  "event_type_#{event_type.id}" , event_type.name-%>
+                    </li>
+                <% end %>
+            </ul>
+
+            <h2>in</h2>
+
+            <div class="type">
+              <%= select_tag "city", options_from_collection_for_select(City.all, "name", "name") %>
+            </div>
+
+        <button class="btn btn-primary" type="submit">Search</button>
+  <% end %>
+  </div>
+</div>
