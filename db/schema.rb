@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221084529) do
+ActiveRecord::Schema.define(version: 20160224122105) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -26,10 +26,14 @@ ActiveRecord::Schema.define(version: 20160221084529) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "hall_id"
   end
 
-  create_table "event_types_halls", id: false, force: :cascade do |t|
+  create_table "event_types_halls", force: :cascade do |t|
+    t.integer "hall_id"
+    t.integer "event_type_id"
+  end
+
+  create_table "hall_event_types", id: false, force: :cascade do |t|
     t.integer "hall_id",       null: false
     t.integer "event_type_id", null: false
   end
@@ -53,6 +57,7 @@ ActiveRecord::Schema.define(version: 20160221084529) do
     t.boolean  "checked"
   end
 
+<<<<<<< HEAD
   create_table "halls_venue_types", id: false, force: :cascade do |t|
     t.integer "hall_id"
     t.integer "venue_type_id"
@@ -66,6 +71,11 @@ ActiveRecord::Schema.define(version: 20160221084529) do
     t.integer  "hall_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+=======
+  create_table "halls_venue_types", force: :cascade do |t|
+    t.integer "hall_id"
+    t.integer "venue_type_id"
+>>>>>>> 346953345688d4262f9903e835d801c8ce42c7a3
   end
 
   add_index "options", ["hall_id"], name: "index_options_on_hall_id"

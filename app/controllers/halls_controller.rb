@@ -49,8 +49,11 @@ class HallsController < ApplicationController
   def new
     @hall = current_user.halls.build
     @cities = City.all
-    @venue_types = VenueType.all.map{|v| [v.name, v.id]}
-    @event_type = EventType.all.map{|e| [e.name, e.id]}
+    # @venue_types = VenueType.all.map{|v| [v.name, v.id]}
+    # @event_type = EventType.all.map{|e| [e.name, e.id]}
+
+     @venue_types = VenueType.all
+     @event_types = EventType.all
   end
 
   def edit
