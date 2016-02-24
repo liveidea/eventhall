@@ -6,29 +6,12 @@
               <h3><%= @hall.name %></h3>
             </div>
 
-<<<<<<< HEAD
-<h3><%= @hall.name %></h3>
-$ <%= @hall.price %>  <br>
-<h5>Description: <%= @hall.description %></h5>  <br>
-<h5>City: <%= @hall.city.name if @hall.city.name %> <br></h5>
-<h5>Venue Types: <% @hall.venue_types.each do |v| %>
-   <%= v.name %>
-<% end %> <br></h5>
-<<<<<<< HEAD
-<h5>Event Types: <%=@hall.event_types.map(&:name).to_sentence%>
-   <br></h5>
-=======
-<h5>Event Types: <% @hall.event_types.map %>
-<% end -%> <br></h5>
->>>>>>> 3dcd3973a5a8d70a2918a519e430401ca7751d68
-=======
             <div class="col-md-3">
                <p class="price">$ <%= @hall.price %></p>
             </div>
          </div>
            <%= image_tag @hall.photos_url if @hall.photos_url %> <br>
       </div>
->>>>>>> 97370dee03a4d6360088c9b95ef9bb8d12c8fb62
 
       <div class="col-md-6">
          <div class="description">
@@ -60,4 +43,3 @@ $ <%= @hall.price %>  <br>
       </div>
    </div>
 </div>
-
