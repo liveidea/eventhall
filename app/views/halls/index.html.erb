@@ -34,7 +34,7 @@
                 </p>
               </div>
               <p><%#= truncate(hall.description, length: 60) %></p>
-              <%= link_to hall.checked ? "checked" : "unchecked", checked_hall_path(hall), method: :put, remote: true, id: "check" , data: {id: hall.id}%>
+              <%#= link_to hall.checked ? "checked" : "unchecked", checked_hall_path(hall), method: :put, remote: true, id: "check" , data: {id: hall.id}%>
             </div>
           </div>
         </div>

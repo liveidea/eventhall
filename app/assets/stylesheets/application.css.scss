@@ -21,7 +21,7 @@
 }
 
 body {
-    background-color: #EDEFED;
+    background-color: #F5F5F6;
 }
 
 .label {
@@ -217,4 +217,38 @@ pagination a, .pagination span.current, .pagination span.gap {
 
 span.label {
     margin-bottom: 20px;
+}
+
+
+// SHOW HALL //
+
+.show-hall-wrapper {
+    .col-md-9 {
+        margin-top: -18px;
+    }
+    .price {
+        font-weight: 700;
+        font-size: 2em;
+    }
+    .label {
+        margin-right: 6px;
+    }
+    h3 {
+        font-size: 2em;
+    }
+    .description {
+        margin-bottom: 20px;
+        h5 {
+            font-size: 1.1em;
+        }
+    }
+    .col-md-6 {
+        font-size: 1.1em;
+    }
+}
+
+
+.img-preview img{
+    height:200px;
+    width: 300px;
 }
