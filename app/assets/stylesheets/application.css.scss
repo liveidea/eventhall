@@ -195,6 +195,9 @@ pagination a, .pagination span.current, .pagination span.gap {
         list-style: none;
         margin-left: -10px;
     }
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 150px;
+}
     select {
         margin-left: 39px;
         margin-top: 53px;
