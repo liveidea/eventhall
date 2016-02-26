@@ -187,13 +187,12 @@ pagination a, .pagination span.current, .pagination span.gap {
     margin-bottom: 25px;
     h2 {
         float: left;
-        margin-top: 44px;
+        margin-top: 24px;
     }
     .type {
         float: left;
-        margin-right: 27px;
-        list-style: none;
-        margin-left: -10px;
+        margin-right: 17px;
+        margin-left: -30px;
     }
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
     width: 150px;
@@ -255,4 +254,15 @@ span.label {
 .img-preview img{
     height:200px;
     width: 300px;
+}
+
+.user-info {
+    margin-bottom: 40px;
+    img {
+        border-radius: 50px;
+    }
+}
+
+#contact-form {
+    padding: 30px;
 }

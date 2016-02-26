@@ -11,13 +11,21 @@
             </div>
          </div>
            <%= image_tag @hall.photos_url if @hall.photos_url %> <br>
-      </div>
 
-      <div class="col-md-6">
-         <div class="description">
+           <div class="description">
             <h5>Description: </h5>
             <p><%= @hall.description %></p>
          </div>
+      </div> <!-- col-md-6 -->
+
+      <div class="col-md-6">
+
+         <div class="user-info text-center">
+            <img src="http://placehold.it/100x100">
+            <p><%= @hall.user.phone %></p>
+            <%= render 'contact_modal' %>
+         </div>
+
 
          City: <h5 class="label label-info"> <%= @hall.city.name if @hall.city.name %> <br></h5> <br>
 
@@ -31,12 +39,7 @@
                <h5 class="label label-info"> <%= e.name %> </h5>
          <% end %> <br> <br>
 
-         Contact the owner:
-         <%= @hall.user.name %>
-         <%= @hall.user.email %>
-         <%= @hall.user.phone %> <br>
-         <br>
-         <br>
+
 
          <%= link_to 'Edit', edit_hall_path(@hall), class: "btn btn-default" %> |
          <%= link_to 'Back', halls_path, class: "btn btn-default" %>
