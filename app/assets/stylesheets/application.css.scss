@@ -260,9 +260,22 @@ span.label {
     margin-bottom: 40px;
     img {
         border-radius: 50px;
+        margin-bottom: 10px;
     }
 }
 
 #contact-form {
+    height: 320px;
     padding: 30px;
+    button {
+        margin-right: 15px;
+    }
+    .col-sm-10 {
+        margin-bottom: 15px;
+        label {
+            float: left;
+        }
+    }
+
+
 }
