@@ -13,6 +13,7 @@ gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'simple_form'
 gem "mini_magick"
+gem 'mail_form'
 
 
 

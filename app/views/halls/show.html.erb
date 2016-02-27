@@ -21,7 +21,7 @@
       <div class="col-md-6">
 
          <div class="user-info text-center">
-            <img src="http://placehold.it/100x100">
+            <%= image_tag @hall.user.avatar.url %>
             <p><%= @hall.user.phone %></p>
             <%= render 'contact_modal' %>
          </div>

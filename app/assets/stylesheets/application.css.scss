@@ -26,6 +26,7 @@ body {
 
 .label {
     font-size: 1.2em;
+    font-weight: 100;
 }
 
 .btn {
@@ -232,8 +233,9 @@ span.label {
         font-weight: 700;
         font-size: 2em;
     }
-    .label {
-        margin-right: 6px;
+    h5.label {
+        display: inline-block;
+        margin-bottom: -3px;
     }
     h3 {
         font-size: 2em;
@@ -261,6 +263,7 @@ span.label {
     img {
         border-radius: 50px;
         margin-bottom: 10px;
+        width:100px;
     }
 }
 
@@ -276,6 +279,5 @@ span.label {
             float: left;
         }
     }
-
-
 }
+
