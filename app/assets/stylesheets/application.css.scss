@@ -67,27 +67,34 @@ body {
     }
 }
 
-.caption {
-    .hall-title {
-        margin-left: 90px;
-        h3 {
-                a {
-                    font-size: 1.4em;
-                    line-height: 10px;
-                }
-            }
+
+.thumbnail {
+    img {
+        margin-bottom: 20px;
     }
-    .description {
-        display: none;
+        .caption {
+        .hall-title {
+            margin-left: 30px;
+            h3 {
+                    a {
+                        font-size: 1.4em;
+                        line-height: 10px;
+                    }
+                }
+        }
+        .description {
+            display: none;
+        }
     }
 }
+
 
 #price {
     width: 100px;
     height: 30px;
     background-color: rgba(78, 74, 69, 0.65);
     float: left;
-    margin-left: -13px;
+    margin-left: -9px;
     margin-top: -70px;
        p {
         color: #fff;
@@ -231,6 +238,10 @@ span.label {
 
 
 // SHOW HALL //
+
+.panel-default {
+    padding: 20px;
+}
 
 .show-hall-wrapper {
     .col-md-9 {
