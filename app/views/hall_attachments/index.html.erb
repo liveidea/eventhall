@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Hall Attachments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hall</th>
+      <th>Photo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hall_attachments.each do |hall_attachment| %>
+      <tr>
+        <td><%= hall_attachment.hall_id %></td>
+        <td><%= hall_attachment.photo %></td>
+        <td><%= link_to 'Show', hall_attachment %></td>
+        <td><%= link_to 'Edit', edit_hall_attachment_path(hall_attachment) %></td>
+        <td><%= link_to 'Destroy', hall_attachment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hall attachment', new_hall_attachment_path %>

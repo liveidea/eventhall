@@ -1,81 +1,81 @@
-<%= form_for @hall,  :html => {:multipart => true}  do |f| %>
+    <%= form_for @hall,  :html => {:multipart => true}  do |f| %>
 
-  <% if @hall.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@hall.errors.count, "error") %> prohibited this controller from being saved:</h2>
+      <% if @hall.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@hall.errors.count, "error") %> prohibited this controller from being saved:</h2>
 
-      <ul>
-      <% @hall.errors.full_messages.each do |message| %>
-         <li><%= message %></li>
+          <ul>
+          <% @hall.errors.full_messages.each do |message| %>
+             <li><%= message %></li>
+           <% end %>
+           </ul>
+         </div>
        <% end %>
-       </ul>
-     </div>
-   <% end %>
 
-<div class="panel panel-default">
-  <div class="panel-body">
-
-<div class="row">
-     <div class="col-md-4">
-       <div class="form-group">
-         <%= f.label :name, "Title" %> <br>
-         <%= f.text_field :name, class: "form-control" %>
-       </div> <br>
-
-       <div class="form-group input-group">
-          <span class="input-group-addon">UAH</span>
-          <%= f.number_field :price, class: "form-control"  %>
-      </div>
-     </div>
-
-     <div class="col-md-8">
-       <div class="form-group">
-         <%= f.label :description, "Description" %>
-         <%= f.text_area :description, class: "form-control", :rows => "5"  %>
-       </div>
-     </div>
-  </div>
-
+    <div class="panel panel-default">
+      <div class="panel-body">
 
     <div class="row">
-          <div class="col-md-4">
-              <div class="form-group">
-                <%= f.label :city %>:
-                <%= f.select :city_id, @cities.map{ |u| [u.name, u.id] }, {}, {class: "selectpicker"} %>
-              </div>
+         <div class="col-md-4">
+           <div class="form-group">
+             <%= f.label :name, "Title" %> <br>
+             <%= f.text_field :name, class: "form-control" %>
+           </div> <br>
+
+           <div class="form-group input-group">
+              <span class="input-group-addon">UAH</span>
+              <%= f.number_field :price, class: "form-control"  %>
           </div>
+         </div>
 
-        <div class="col-md-4">
-            <div class="form-group">
-              <%= f.label :venue_type %>:
-                <%#= f.collection_check_boxes :venue_type_ids, VenueType.all, :id, :name , class: "styled" %>
-                 <%= f.select :venue_type_ids, @venue_types.map{ |u| [u.name, u.id] }, {}, {class: "selectpicker", :multiple => true} %>
+         <div class="col-md-8">
+           <div class="form-group">
+             <%= f.label :description, "Description" %>
+             <%= f.text_area :description, class: "form-control", :rows => "5"  %>
+           </div>
+         </div>
+      </div>
+
+
+        <div class="row">
+              <div class="col-md-4">
+                  <div class="form-group">
+                    <%= f.label :city %>:
+                    <%= f.select :city_id, @cities.map{ |u| [u.name, u.id] }, {}, {class: "selectpicker"} %>
+                  </div>
+              </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                  <%= f.label :venue_type %>:
+                    <%#= f.collection_check_boxes :venue_type_ids, VenueType.all, :id, :name , class: "styled" %>
+                     <%= f.select :venue_type_ids, @venue_types.map{ |u| [u.name, u.id] }, {}, {class: "selectpicker", :multiple => true} %>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="form-group">
+                   <%= f.label :event_type %>:
+                      <%#= f.collection_check_boxes :event_type_ids, EventType.all, :id, :name, class: "styled"  %>
+                     <%= f.select :event_type_ids, @event_types.map{ |u| [u.name, u.id] }, {}, {class: "selectpicker", :multiple => true} %>
+                </div>
             </div>
         </div>
 
 
-        <div class="col-md-4">
-            <div class="form-group">
-               <%= f.label :event_type %>:
-                  <%#= f.collection_check_boxes :event_type_ids, EventType.all, :id, :name, class: "styled"  %>
-                 <%= f.select :event_type_ids, @event_types.map{ |u| [u.name, u.id] }, {}, {class: "selectpicker", :multiple => true} %>
-            </div>
+        <%= f.file_field :photos, :onchange => "previewFile()", :type => "file" %> <br>
+        <div class="img-preview">
+           <img src=""  alt="">
         </div>
+
+
+
+        <div class="actions">
+          <%= f.submit "Save", class: "btn btn-success" %>
+        </div>
+      </div>
     </div>
 
-
-    <%= f.file_field :photos, :onchange => "previewFile()", :type => "file" %> <br>
-    <div class="img-preview">
-       <img src=""  alt="">
-    </div>
-
-
-
-    <div class="actions">
-      <%= f.submit "Save", class: "btn btn-success" %>
-    </div>
-  </div>
-</div>
-
-<% end %>
+    <% end %>
 

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Hall:</strong>
+  <%= @hall_attachment.hall_id %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @hall_attachment.photo %>
+</p>
+
+<%= link_to 'Edit', edit_hall_attachment_path(@hall_attachment) %> |
+<%= link_to 'Back', hall_attachments_path %>
