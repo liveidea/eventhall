@@ -186,16 +186,17 @@ pagination a, .pagination span.current, .pagination span.gap {
     background-color: white;
     margin-top: -82px;
     margin-bottom: 25px;
-    // margin-left: -70px;
+    margin-left: -70px;
     h2 {
         float: left;
         margin-top: 24px;
+        margin-left: -70px;
     }
     .type {
         float: left;
-        margin-right: 17px;
+        margin-right: 87px;
         margin-left: -30px;
-        margin-top: -21px;
+        margin-top: -3px;
     }
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
     width: 150px;
@@ -205,7 +206,8 @@ pagination a, .pagination span.current, .pagination span.gap {
         margin-top: 53px;
     }
     button {
-        margin-top: 45px;
+        margin-top: 21px;
+        margin-bottom: 10px;
     }
     .search {
         margin: 0 auto;
