@@ -40,8 +40,10 @@
          <% end %> <br> <br>
 
 
+        <% if current_user == @hall.user %>
+          <%= link_to 'Edit', edit_hall_path(@hall), class: "btn btn-default" %>  |
+        <% end %>
 
-         <%= link_to 'Edit', edit_hall_path(@hall), class: "btn btn-default" %> |
          <%= link_to 'Back', halls_path, class: "btn btn-default" %>
       </div>
    </div>
