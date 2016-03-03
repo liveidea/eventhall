@@ -71,6 +71,7 @@ body {
 .thumbnail {
     img {
         margin-bottom: 20px;
+        width: 100%;
     }
         .caption {
         .hall-title {
@@ -391,6 +392,9 @@ span.label {
             h5 {
                 display: none;
             }
+        }
+        img {
+            width:  25%;
         }
     }
 }
