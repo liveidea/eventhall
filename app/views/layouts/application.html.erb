@@ -10,8 +10,9 @@
 	<%= javascript_include_tag 'bootstrap-select' %>
 	<%= stylesheet_link_tag 'bootstrap-select' %>
 
-	<link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+	<!-- <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'> -->
 	<link href='https://fonts.googleapis.com/css?family=Life+Savers:700' rel='stylesheet' type='text/css'>
+         <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
 	<%= csrf_meta_tags %>
 
 </head>
@@ -19,16 +20,17 @@
 
 <%= render 'layouts/nav' %>
 
+
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
  <%= yield %>
+
 <footer>
 <div class="container">
 ©2016 Romankan & Grek | <a href="http://www.live-idea.org/">Made in School of ideas realization</a>
 </div>	
 </footer>
-
 
 </body>
 </html>

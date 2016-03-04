@@ -1,6 +1,7 @@
 class HallsController < ApplicationController
   before_action :set_hall, only: [:show, :edit, :update, :destroy, :checked]
   before_action :authenticate_user!, :except => [:show, :index]
+  before_action :own_hall, only: [:edit, :update]
 
   respond_to :html, :xml, :json
 
@@ -110,6 +111,13 @@ class HallsController < ApplicationController
   private
     def set_hall
       @hall = Hall.find(params[:id])
+    end
+
+    def own_hall
+      @hall = Hall.find params[:id]
+      unless current_user == @hall.user
+         redirect_to(@hall, notice: "You can not edit this hall") and return
+      end
     end
 
     def hall_params

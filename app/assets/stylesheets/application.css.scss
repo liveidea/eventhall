@@ -17,7 +17,7 @@
 
 * {
     -webkit-font-smoothing: antialiased;
-     font-family: 'Questrial', sans-serif;
+     font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -71,6 +71,10 @@ body {
 .thumbnail {
     img {
         margin-bottom: 20px;
+<<<<<<< HEAD
+=======
+        width: 100%;
+>>>>>>> c1c597c33e74e8074941b061f3a6ca2c08e6dd68
     }
         .caption {
         .hall-title {
@@ -151,7 +155,7 @@ pagination a, .pagination span.current, .pagination span.gap {
 }
 
 .navbar-default {
-    background-color: #FF5A5F;
+    background-color: #494E58;
     .navbar-header {
             a {
                 color: white;
@@ -166,13 +170,28 @@ pagination a, .pagination span.current, .pagination span.gap {
     .navbar-nav {
         li {
             a {
-                color: white;
-                font-weight: 700;
+                color: #F9F9F9;
+                font-weight: 400;
                 font-size: 16px;
+                &:hover {
+                    color: white;
+                }
             }
         }
     }
 }
+
+
+ul li:hover:after,
+ul li.active:after{
+    border: .15em solid #2E9FFF;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    width: 100px;
+}
+
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover {
     background-color: transparent;
@@ -185,11 +204,8 @@ pagination a, .pagination span.current, .pagination span.gap {
             background-color: #5BC0DE;
         }
     }
-        li
-           a:hover {
-            background-color: #5BC0DE;
-        }
 }
+
 
 
 .search-wrapper {
@@ -380,5 +396,11 @@ span.label {
                 display: none;
             }
         }
+<<<<<<< HEAD
+=======
+        img {
+            width:  25%;
+        }
+>>>>>>> c1c597c33e74e8074941b061f3a6ca2c08e6dd68
     }
 }
