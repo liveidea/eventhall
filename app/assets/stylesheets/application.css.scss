@@ -67,24 +67,34 @@ body {
     }
 }
 
-.caption {
-    .hall-title {
-        margin-left: 90px;
-        h3 {
-                a {
-                    font-size: 1.4em;
-                    line-height: 10px;
+
+.thumbnail {
+    img {
+        margin-bottom: 20px;
+    }
+        .caption {
+        .hall-title {
+            margin-left: 30px;
+            h3 {
+                    a {
+                        font-size: 1.4em;
+                        line-height: 10px;
+                    }
                 }
-            }
+        }
+        .description {
+            display: none;
+        }
     }
 }
+
 
 #price {
     width: 100px;
     height: 30px;
     background-color: rgba(78, 74, 69, 0.65);
     float: left;
-    margin-left: -13px;
+    margin-left: -9px;
     margin-top: -70px;
        p {
         color: #fff;
@@ -186,15 +196,17 @@ pagination a, .pagination span.current, .pagination span.gap {
     background-color: white;
     margin-top: -82px;
     margin-bottom: 25px;
+    margin-left: -70px;
     h2 {
         float: left;
         margin-top: 24px;
+        margin-left: -70px;
     }
     .type {
         float: left;
-        margin-right: 17px;
+        margin-right: 87px;
         margin-left: -30px;
-        margin-top: -21px;
+        margin-top: -3px;
     }
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
     width: 150px;
@@ -204,7 +216,8 @@ pagination a, .pagination span.current, .pagination span.gap {
         margin-top: 53px;
     }
     button {
-        margin-top: 45px;
+        margin-top: 21px;
+        margin-bottom: 10px;
     }
     .search {
         margin: 0 auto;
@@ -225,6 +238,10 @@ span.label {
 
 
 // SHOW HALL //
+
+.panel-default {
+    padding: 20px;
+}
 
 .show-hall-wrapper {
     .col-md-9 {
@@ -282,3 +299,86 @@ span.label {
     }
 }
 
+
+// ///////      LIST GRID
+
+.glyphicon { margin-right:5px; }
+.thumbnail
+{
+    margin-bottom: 20px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.item.list-group-item
+{
+    float: none;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+
+.item.list-group-item .list-group-image
+{
+    margin-right: 10px;
+}
+.item.list-group-item .thumbnail
+{
+    margin-bottom: 0px;
+}
+.item.list-group-item .caption
+{
+    padding: 9px 9px 0px 9px;
+}
+
+.item.list-group-item:before, .item.list-group-item:after
+{
+    display: table;
+    content: " ";
+}
+
+.item.list-group-item img
+{
+    float: left;
+}
+.item.list-group-item:after
+{
+    clear: both;
+}
+.list-group-item-text
+{
+    margin: 0 0 11px;
+}
+
+#products {
+    .list-group-item {
+        .thumbnail {
+            background-color: transparent;
+            border: none;
+            .caption {
+                .hall-title {
+                    float: left;
+                    margin-left: 44px;
+                }
+                #price {
+                    float: none;
+                    margin-left: 394px;
+                    margin-top: 50px;
+                }
+                .description {
+                    display: block;
+                    p {
+                        margin: -74px -50px 11px;
+                        padding-right: 78px;
+                    }
+                }
+            }
+            h5 {
+                display: none;
+            }
+        }
+    }
+}

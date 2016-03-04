@@ -19,13 +19,15 @@
 
 <%= render 'layouts/nav' %>
 
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+ <%= yield %>
+<footer>
 <div class="container">
-		<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>
-
-	 <%= yield %>
-
-</div>
+©2016 Romankan & Grek | <a href="http://www.live-idea.org/">Made in School of ideas realization</a>
+</div>	
+</footer>
 
 
 </body>

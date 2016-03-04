@@ -1,55 +1,74 @@
 
 <%= render "search" %>
 
-<span class="<%= 'label label-info' if params[:event_type] || params[:city] || params[:venue_type]  %>">
+<div class="container-fluid">
 
-      <% @selected_venue_types.each do |v| %>
-        <%= v.name %>
-      <% end -%>
-
-      <% @selected_event_types.each do |e| %>
-        <%= e.name %>
-      <% end -%>
-
-      <%= params[:city] %>
-</span> <br><br>
-
-
-<% if @halls.count == 0 %>
-   <h1>There are currently no halls in this category</h1>
-<% else %>
-    <div class="row">
-      <% @halls.each do |hall| %>
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <%= image_tag hall.photos.url %>
-            <div class="caption text-center">
-              <div class="hall-title">
-                <h3><%= link_to truncate(hall.name, length: 15), hall %></h3>
-              </div>
-
-              <h5><%= hall.city.name if hall.city %></h5>
-              <div id="price">
-                <p>
-                  $ <%= hall.price %>
-                </p>
-              </div>
-              <p><%#= truncate(hall.description, length: 60) %></p>
-              <%#= link_to hall.checked ? "checked" : "unchecked", checked_hall_path(hall), method: :put, remote: true, id: "check" , data: {id: hall.id}%>
-            </div>
-          </div>
+        <div class="btn-group">
+            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+            </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+                class="glyphicon glyphicon-th"></span>Grid</a>
         </div>
-        <% end -%>
-    </div>
-<% end %>
+
+
+    <span class="<%= 'label label-info' if params[:event_type] || params[:city] || params[:venue_type]  %>">
+
+          <% @selected_venue_types.each do |v| %>
+            <%= v.name %>
+          <% end -%>
+
+          <% @selected_event_types.each do |e| %>
+            <%= e.name %>
+          <% end -%>
+
+          <%= params[:city] %>
+    </span> <br><br>
+
+
+    <% if @halls.count == 0 %>
+       <h1>There are currently no halls in this category</h1>
+    <% else %>
+
+        <div class="row list-group" id="products">
+          <% @halls.each do |hall| %>
+            <div class="item col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <%= image_tag hall.photos.url, class: "group list-group-image" %>
+                <div class="caption text-center">
+                  <div class="hall-title">
+                    <h3 class="group inner list-group-item-heading"><%= link_to truncate(hall.name, length: 15), hall %></h3>
+                  </div>
+
+                  <h5><%= hall.city.name if hall.city %></h5>
+                  <div id="price">
+                    <p>
+                      $ <%= hall.price %>
+                    </p>
+                  </div>
+                  <div class="description col-md-6 pull-right">
+                    <p class="group inner list-group-item-text"><%= truncate(hall.description, length: 200) %></p>
+                  </div>
+                  <%#= link_to hall.checked ? "checked" : "unchecked", checked_hall_path(hall), method: :put, remote: true, id: "check" , data: {id: hall.id}%>
+                </div>
+              </div>
+            </div>
+            <% end -%>
+        </div>
+    <% end %>
 
 
 
-<%= paginate @halls  %>
-
-<br>
-
-<%= link_to 'New Hall', new_hall_path, class: "btn btn-success" %>
 
 
+    <%= paginate @halls  %>
 
+    <br>
+
+
+
+<script>
+  $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
+  $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
+</script>
+
+
+</div> <!-- container -->
