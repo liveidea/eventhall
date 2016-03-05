@@ -32,7 +32,11 @@
           <% @halls.each do |hall| %>
             <div class="item col-sm-6 col-md-4">
               <div class="thumbnail">
-                <%= image_tag hall.photos.url, class: "group list-group-image" %>
+                 <% hall.photos.each do |photo| %>
+                    <%#= cl_image_tag(photo.path, { size: '125x125', crop: :fit }) %>
+                    <%= cl_image_tag(photo.path) %>
+                <% end %>
+                <%#= image_tag hall.photos.url, class: "group list-group-image" %>
                 <div class="caption text-center">
                   <div class="hall-title">
                     <h3 class="group inner list-group-item-heading"><%= link_to truncate(hall.name, length: 15), hall %></h3>

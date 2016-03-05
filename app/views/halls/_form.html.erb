@@ -64,7 +64,8 @@
         </div>
 
 
-        <%= f.file_field :photos, :onchange => "previewFile()", :type => "file" %> <br>
+      <%= f.attachinary_file_field :photos %>
+        <%#= f.file_field :photos, :onchange => "previewFile()", :type => "file" %> <br>
         <div class="img-preview">
            <img src=""  alt="">
         </div>
@@ -76,6 +77,8 @@
         </div>
       </div>
     </div>
+
+
 
     <% end %>
 

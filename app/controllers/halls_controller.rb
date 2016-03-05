@@ -121,6 +121,6 @@ class HallsController < ApplicationController
     end
 
     def hall_params
-       params.require(:hall).permit(:description, :price, :photos, :name, :city, :city_id, :venue_type,  :event_type, :checked_hall, :event_type_ids => [], :venue_type_ids => [] )
+       params.require(:hall).permit(:description, :price, :photos, :name, :city, :city_id, :venue_type,  :event_type, :checked_hall, :event_type_ids => [], :venue_type_ids => [], :photos => [] )
     end
 end
