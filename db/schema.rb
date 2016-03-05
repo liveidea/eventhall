@@ -11,9 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160305094645) do
-=======
 ActiveRecord::Schema.define(version: 20160305100511) do
 
   create_table "attachinary_files", force: :cascade do |t|
@@ -31,7 +28,6 @@ ActiveRecord::Schema.define(version: 20160305100511) do
   end
 
   add_index "attachinary_files", ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
->>>>>>> e7b96a3fb420966ae6e6649cda7b26b287f5fc62
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
