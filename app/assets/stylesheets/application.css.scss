@@ -218,7 +218,7 @@ ul li.active:after{
         text-transform: uppercase;
         font-weight: bold;
         color: #357ebd;
-        margin-top: 24px;
+        margin-top: 20px;
         margin-left: -70px;
     }
     .type {
@@ -413,6 +413,8 @@ footer {
   background-color: #494E58;
   padding-top: 10px;
   color: white;
+  position: absolute;
+  bottom: 0;
 }
 
 body {
