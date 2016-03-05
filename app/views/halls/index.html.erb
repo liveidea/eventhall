@@ -34,7 +34,7 @@
               <div class="thumbnail">
                   <ul class="bxslider">
                       <% hall.photos.each do |photo| %>
-                          <li><%= cl_image_tag(photo.path,  class: "group list-group-image") %></li>
+                          <li><%= cl_image_tag(photo.path, {class: "group list-group-image"} ) %></li>
                       <% end -%>
                   </ul>
                 <div class="caption text-center">

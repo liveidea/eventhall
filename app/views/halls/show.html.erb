@@ -14,7 +14,7 @@
 
           <ul class="bxslider">
               <% @hall.photos.each do |photo| %>
-                    <li><%= cl_image_tag(photo.path) %></li>
+                    <li><%= cl_image_tag(photo.path, {:crop=>:fill, :width=>550, :height=>270,}) %></li>
               <% end -%>
           </ul>
 
