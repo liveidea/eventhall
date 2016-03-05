@@ -10,7 +10,13 @@
                <p class="price">$ <%= @hall.price %></p>
             </div>
          </div>
-           <%= image_tag @hall.photos_url if @hall.photos_url %> <br>
+
+
+         <% @hall.photos.each do |photo| %>
+            <%= cl_image_tag(photo.path) %>
+        <% end %>
+
+           <%#= image_tag @hall.photos_url if @hall.photos_url %> <br>
 
            <div class="description">
             <h5>Description: </h5>

@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dn3cox4zr
+  api_key: '572636871618368'
+  api_secret: dSokLdsoTfWrS076D9oNeKa5wck
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dn3cox4zr
+  api_key: '572636871618368'
+  api_secret: dSokLdsoTfWrS076D9oNeKa5wck
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dn3cox4zr
+  api_key: '572636871618368'
+  api_secret: dSokLdsoTfWrS076D9oNeKa5wck
+  enhance_image_tag: true
+  static_image_support: false
