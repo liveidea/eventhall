@@ -3,7 +3,7 @@ class Hall < ActiveRecord::Base
   belongs_to :city
   has_many :reviews, dependent: :destroy
 
-  has_attachments :photos, maximum: 10
+  has_attachments :photos, maximum: 5
   validates :photos, presence: true
 
 

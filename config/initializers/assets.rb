@@ -12,4 +12,6 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( variables.css )
 Rails.application.config.assets.precompile += %w( bootstrap-select.css )
 Rails.application.config.assets.precompile += %w( bootstrap-select.js )
+Rails.application.config.assets.precompile += %w( jquery.bxslider.css )
+Rails.application.config.assets.precompile += %w( jquery.bxslider.min.js )
 

@@ -12,16 +12,17 @@
          </div>
 
 
-         <% @hall.photos.each do |photo| %>
-            <%= cl_image_tag(photo.path) %>
-        <% end %>
+          <ul class="bxslider">
+              <% @hall.photos.each do |photo| %>
+                    <li><%= cl_image_tag(photo.path, {:crop=>:fill, :width=>550, :height=>270,}) %></li>
+              <% end -%>
+          </ul>
 
-           <%#= image_tag @hall.photos_url if @hall.photos_url %> <br>
 
            <div class="description">
-            <h5>Description: </h5>
-            <p><%= @hall.description %></p>
-         </div>
+              <h5>Description: </h5>
+              <p><%= @hall.description %></p>
+           </div>
       </div> <!-- col-md-6 -->
 
       <div class="col-md-6">
@@ -54,3 +55,9 @@
       </div>
    </div>
 </div>
+
+<script>
+$(document).ready(function(){
+  $('.bxslider').bxSlider();
+});
+</script>
