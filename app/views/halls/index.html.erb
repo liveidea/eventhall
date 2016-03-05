@@ -32,11 +32,11 @@
           <% @halls.each do |hall| %>
             <div class="item col-sm-6 col-md-4">
               <div class="thumbnail">
-                 <% hall.photos.each do |photo| %>
-                    <%#= cl_image_tag(photo.path, { size: '125x125', crop: :fit }) %>
-                    <%= cl_image_tag(photo.path) %>
-                <% end %>
-                <%#= image_tag hall.photos.url, class: "group list-group-image" %>
+                  <ul class="bxslider">
+                      <% hall.photos.each do |photo| %>
+                          <li><%= cl_image_tag(photo.path,  class: "group list-group-image") %></li>
+                      <% end -%>
+                  </ul>
                 <div class="caption text-center">
                   <div class="hall-title">
                     <h3 class="group inner list-group-item-heading"><%= link_to truncate(hall.name, length: 15), hall %></h3>
@@ -72,6 +72,10 @@
 <script>
   $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
   $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
+
+$(document).ready(function(){
+  $('.bxslider').bxSlider();
+});
 </script>
 
 
