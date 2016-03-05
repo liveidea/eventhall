@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20160305085438) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "event_types_halls_tables", force: :cascade do |t|
+  create_table "event_types_halls", force: :cascade do |t|
     t.integer "hall_id"
     t.integer "event_type_id"
   end
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20160305085438) do
     t.boolean  "checked"
   end
 
-  create_table "halls_venue_types_tables", force: :cascade do |t|
+  create_table "halls_venue_types", force: :cascade do |t|
     t.integer "hall_id"
     t.integer "venue_type_id"
   end
