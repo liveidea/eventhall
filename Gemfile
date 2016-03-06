@@ -2,7 +2,11 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.2.5'
-gem 'sqlite3', group :development
+
+group :development do
+  gem 'sqlite3'
+end
+
 gem 'sass-rails', '~> 5.0'
 
 gem 'devise'
