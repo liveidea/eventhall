@@ -420,12 +420,15 @@ footer {
   background-color: #494E58;
   padding-top: 10px;
   color: white;
-  position: absolute;
-  bottom: 0;
+  // position: absolute;
+  // bottom: 0;
+  position:  relative;
+  margin-top: 40px;
+  clear: both;
 }
 
 body {
-    margin-bottom: 40px;
+    padding-bottom: 40px;
 }
 
 .navbar-brand {
