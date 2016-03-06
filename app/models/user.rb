@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
    mount_uploader :avatar, PhotosUploader
 
    has_attachment :avatar
+   validates :avatar, presence: true
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
