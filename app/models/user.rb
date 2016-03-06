@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
    mount_uploader :avatar, PhotosUploader
 
-   has_attachment :avatar
+   # has_attachment :avatar
    validates :avatar, presence: true
 
 
