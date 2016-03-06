@@ -209,7 +209,11 @@ ul li.active:after{
 
 .search-wrapper {
     background-color: white;
-    background-image: url('/logo/map.png');
+   background-image:
+            linear-gradient(
+            rgba(73, 78, 88, 0.45),
+             rgba(0, 0, 0, 0)
+            ),url('/logo/map.png');
     margin-top: -82px;
     margin-bottom: 25px;
     margin-left: -70px;
