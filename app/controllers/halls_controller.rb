@@ -104,6 +104,8 @@ class HallsController < ApplicationController
     end
   end
 
+  def team
+  end
 
 
 

@@ -447,3 +447,53 @@ body {
 .bx-wrapper {
     height: 270px !important;
 }
+
+
+.team {
+    h2 {
+        margin-bottom: 35px;
+    }
+    ul {
+        margin-left: 92px;
+        li {
+            list-style: none;
+            margin-bottom: 10px;
+            i {
+                margin-right: 6px;
+            }
+            a {
+                font-size: 1.3em;
+            }
+        }
+    }
+
+}
+
+
+.team img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px
+}
+
+.fa {
+    font-size: 2.3em !important;
+}
+
+.ionicons {
+    font-size: 2.65em !important;
+}
+
+.team-li {
+    &:hover {
+        // border: none !important;
+    }
+    a {
+    border: 2px solid #3192D0;
+    border-radius: 7px;
+    padding: 8px !important;
+    margin-top: 5px;
+
+    }
+
+}

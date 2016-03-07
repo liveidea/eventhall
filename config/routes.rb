@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
 
 
-
-
   root  "halls#index"
 
   resources :halls do
@@ -16,6 +14,8 @@ Rails.application.routes.draw do
         put :checked
      end
   end
+
+  get 'our_team' => 'halls#team'
 
 
 end

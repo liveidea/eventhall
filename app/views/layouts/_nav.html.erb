@@ -16,6 +16,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
+          <li class="team-li"><%= link_to "Our Team!", our_team_path %></li>
         <% if user_signed_in? %>
           <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
           <li><%= link_to "Edit Profile (#{current_user.name})", edit_user_registration_path %></li>
