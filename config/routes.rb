@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
 
 
+
+
+scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
   root  "halls#index"
 
   resources :halls do
@@ -16,6 +19,9 @@ Rails.application.routes.draw do
   end
 
   get 'our_team' => 'halls#team'
+end
 
+get '*path', to: redirect("/#{I18n.default_locale}/%{path}")
+get '', to: redirect("/#{I18n.default_locale}")
 
 end
