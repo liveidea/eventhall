@@ -181,15 +181,7 @@ pagination a, .pagination span.current, .pagination span.gap {
 }
 
 
-ul li:hover:after,
-ul li.active:after{
-    border: .15em solid #2E9FFF;
-    bottom: 0;
-    content: "";
-    left: 0;
-    position: absolute;
-    width: 100px;
-}
+
 
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover {
@@ -485,15 +477,19 @@ body {
 }
 
 .team-li {
-    &:hover {
-        // border: none !important;
-    }
     a {
     border: 2px solid #3192D0;
     border-radius: 7px;
     padding: 8px !important;
     margin-top: 5px;
-
+        &:hover {
+            border-color: rgba(49, 146, 208, 0.67) !important;
+            background-color: rgba(49, 146, 208, 0.67) !important;
+            -webkit-transition: all 200ms ease;
+            -moz-transition: all 200ms ease;
+            -ms-transition: all 200ms ease;
+            -o-transition: all 200ms ease;
+            transition: all 200ms ease;
+        }
     }
-
 }

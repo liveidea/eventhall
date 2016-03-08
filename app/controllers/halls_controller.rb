@@ -1,6 +1,6 @@
 class HallsController < ApplicationController
   before_action :set_hall, only: [:show, :edit, :update, :destroy, :checked]
-  before_action :authenticate_user!, :except => [:show, :index]
+  before_action :authenticate_user!, :except => [:show, :index, :team]
   before_action :own_hall, only: [:edit, :update]
 
   respond_to :html, :xml, :json
