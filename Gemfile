@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.2.5'
+gem 'rails-i18n'
 
 group :development do
   gem 'sqlite3'

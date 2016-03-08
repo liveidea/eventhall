@@ -1,6 +1,26 @@
 ---
 uk:
   activerecord:
+
+  nav:
+    new_hall: Додати заклад
+    our_team: Наша команда!
+    sign_out: Вийти
+    edit_profile: Редагувати профіль
+    log_in: Увійти
+    sign_up:  Зареєструватися
+
+  index:
+    list: Список
+    grid: Таблиця
+    no_halls: В цій категорії поки немає приміщень
+
+  search:
+    am_searching: Я шукаю
+    for: для
+    in: в
+    search: Пошук
+
     errors:
       messages:
         record_invalid: 'Виникли помилки: %{errors}'
@@ -252,3 +272,6 @@ uk:
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
     pm: по полудні
+
+
+# new_hall: Додати приміщення
