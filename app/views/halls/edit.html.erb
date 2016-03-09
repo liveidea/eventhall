@@ -1,9 +1,8 @@
 <div class="container">
-      <h1>Edit <%= @hall.name %></h1>
+      <h1> <%= t('edit.edit') %> <%= @hall.name %></h1>
 
       <%= render 'form' %>
 
-      <%= link_to 'Cancel', halls_path, class: "btn btn-primary" %>
-      <%= link_to "Delete Venue", hall_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+      <%= link_to t('edit.back'), halls_path, class: "btn btn-primary" %>
+      <%= link_to t('edit.delete_venue'), hall_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 </div>
-

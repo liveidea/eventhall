@@ -34,24 +34,24 @@
          </div>
 
 
-         City: <h5 class="label label-info"> <%= @hall.city.name if @hall.city.name %> <br></h5> <br>
+         <%= t('show.city') %>: <h5 class="label label-info"> <%= @hall.city.name if @hall.city.name %> <br></h5> <br>
 
-         Venue Type:
+         <%= t('show.venue_type') %>:
          <% @hall.venue_types.each do |v| %>
             <h5 class="label label-info"> <%= v.name %> </h5>
          <% end %>  <br><br>
 
-         Event Type:
+         <%= t('show.event_type') %>:
           <% @hall.event_types.each do |e| %>
                <h5 class="label label-info"> <%= e.name %> </h5>
          <% end %> <br> <br>
 
 
         <% if current_user == @hall.user %>
-          <%= link_to 'Edit', edit_hall_path(@hall), class: "btn btn-default" %>  |
+          <%= link_to t('show.edit'), edit_hall_path(@hall), class: "btn btn-default" %>  |
         <% end %>
 
-         <%= link_to 'Back', halls_path, class: "btn btn-default" %>
+         <%= link_to t('show.back'), halls_path, class: "btn btn-default" %>
       </div>
    </div>
 </div>

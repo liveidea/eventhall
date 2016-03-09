@@ -26,6 +26,28 @@ uk:
     in: в
     search: Пошук
 
+  show:
+    city: Місто
+    venue_type: Тип закладу
+    event_type: Тип події
+    edit: Редагувати
+    back: Назад
+    contact_owner: Зв’язатись з представником
+
+  edit:
+    edit: Редагувати
+    back: Назад
+    delete_venue: Видалити заклад
+
+  form:
+    title: Назва закладу
+    description: Опис
+    save: Зберегти
+
+
+
+
+
     errors:
       messages:
         record_invalid: 'Виникли помилки: %{errors}'

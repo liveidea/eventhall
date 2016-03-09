@@ -25,3 +25,21 @@ en:
     for: for my
     in: in
     search: Search
+
+  show:
+    city: City
+    venue_type: Venue type
+    event_type: Event type
+    edit: Edit
+    back: Back
+    contact_owner: Contact the owner
+
+  edit:
+    edit: Edit
+    back: Back
+    delete_venue: Delete venue
+
+  form:
+    title: Title
+    description: Description
+    save: Save
