@@ -44,6 +44,9 @@ uk:
     description: Опис
     save: Зберегти
 
+  new:
+    new: Додати заклад
+    back: Назад
 
 
 

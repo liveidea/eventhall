@@ -43,3 +43,7 @@ en:
     title: Title
     description: Description
     save: Save
+
+  new:
+    new: Add new venue
+    back: Back
