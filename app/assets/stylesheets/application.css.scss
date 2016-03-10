@@ -493,3 +493,11 @@ body {
         }
     }
 }
+
+.bootstrap-select.btn-group .dropdown-menu {
+  margin-top: -11px;
+}
+
+.search-wrapper .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+  width: 220px;
+}

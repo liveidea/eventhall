@@ -21,7 +21,7 @@ gem "mini_magick"
 gem 'mail_form'
 gem 'cloudinary'
 gem 'attachinary'
-
+gem 'globalize', '~> 4.0.3'
 
 
 gem 'uglifier', '>= 1.3.0'
@@ -52,4 +52,3 @@ group :development do
   gem 'pry-rails'
   gem "better_errors"
 end
-

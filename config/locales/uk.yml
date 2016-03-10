@@ -5,7 +5,6 @@ uk:
     en: "English"
     uk: "Українська"
 
-  activerecord:
 
   nav:
     new_hall: Додати заклад
