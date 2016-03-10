@@ -51,3 +51,13 @@ en:
   team:
     andrian: Andrian Gretsko
     roman: Roman Kanafotskyi
+
+  halls:
+    create:
+      notice: Hall was successfully created!
+    update:
+      notice: Hall was successfully updated!
+    destroy:
+      notice: Hall was successfully destroyed!
+    own_hall:
+      notice: You can not edit this hall

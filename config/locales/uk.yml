@@ -51,6 +51,16 @@ uk:
     andrian: Андріан Грецко
     roman: Роман Канафоцький
 
+  halls:
+    create:
+      notice: Заклад створено успішно!
+    update:
+      notice: Оновлено успішно!
+    destroy:
+      notice: Видалено успішно!
+    own_hall:
+      notice: Ви не можете редагувати це приміщення.
+
 
 
 

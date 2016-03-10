@@ -34,16 +34,6 @@ class HallsController < ApplicationController
 
   end
 
-  def checked
-    @hall.checked = !@hall.checked
-    if @hall.save
-       respond_to do |format|
-          format.html { redirect_to :back, notice: 'Hall was successfully checked.' }
-          format.js { render :layout => false }
-      end
-    end
-  end
-
   def show
   end
 
@@ -71,7 +61,7 @@ class HallsController < ApplicationController
     @hall.event_type_ids = params[:event_type_ids]
     respond_to do |format|
       if @hall.save
-        format.html { redirect_to @hall, notice: 'Hall was successfully created.' }
+        format.html { redirect_to @hall, notice: t('.notice') }
         format.json { render :show, status: :created, location: @hall }
       else
         format.html { render :new }
@@ -86,7 +76,7 @@ class HallsController < ApplicationController
     @event_type = EventType.all.map{|e| [e.name, e.id]}
     respond_to do |format|
       if @hall.update(hall_params)
-        format.html { redirect_to @hall, notice: 'Hall was successfully updated.' }
+        format.html { redirect_to @hall, notice: t('.notice') }
         format.json { render :show, status: :ok, location: @hall }
       else
         format.html { render :edit }
@@ -99,7 +89,7 @@ class HallsController < ApplicationController
     @hall.destroy
 
     respond_to do |format|
-      format.html { redirect_to halls_url, notice: 'Hall was successfully destroyed.' }
+      format.html { redirect_to halls_url, notice: t('.notice') }
       format.json { head :no_content }
     end
   end
@@ -118,7 +108,7 @@ class HallsController < ApplicationController
     def own_hall
       @hall = Hall.find params[:id]
       unless current_user == @hall.user
-         redirect_to(@hall, notice: "You can not edit this hall") and return
+         redirect_to(@hall, notice: t('.notice') ) and return
       end
     end
 
