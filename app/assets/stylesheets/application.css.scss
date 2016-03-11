@@ -206,13 +206,13 @@ pagination a, .pagination span.current, .pagination span.gap {
             rgba(73, 78, 88, 0.45),
              rgba(0, 0, 0, 0)
             ),url('/logo/map.png');
-    margin-top: -82px;
+    margin-top: -42px;
     margin-bottom: 25px;
     margin-left: -70px;
     height: 150px;
     h2 {
         float: left;
-        text-transform: uppercase;
+        // text-transform: uppercase;
         font-weight: bold;
         color: #357ebd;
         margin-top: 20px;
@@ -220,8 +220,8 @@ pagination a, .pagination span.current, .pagination span.gap {
     }
     .type {
         float: left;
-        margin-right: 87px;
-        margin-left: -30px;
+        margin-right: 77px; //87
+        margin-left: -37px; //30
         margin-top: -3px;
     }
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
@@ -238,7 +238,7 @@ pagination a, .pagination span.current, .pagination span.gap {
     .search {
         margin: 0 auto;
         display: table;
-        margin-top: 35px;
+        margin-top: 43px;
         input[type="checkbox"] {
                 height: 1.25em;
                 width: 1.25em;
