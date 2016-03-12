@@ -39,8 +39,8 @@ class HallsController < ApplicationController
 
   def new
     @hall = current_user.halls.build
-    @cities = City.all
 
+     @cities = City.all
      @venue_types = VenueType.all
      @event_types = EventType.all
   end
@@ -55,8 +55,8 @@ class HallsController < ApplicationController
   def create
     @hall = current_user.halls.create(hall_params)
     @cities = City.all
-    @hall.venue_type_ids = params[:venue_type_ids]
-    @hall.event_type_ids = params[:event_type_ids]
+    # @hall.venue_type_ids = params[:venue_type_ids]
+    # @hall.event_type_ids = params[:event_type_ids]
     respond_to do |format|
       if @hall.save
         format.html { redirect_to @hall, notice: t('.notice') }
