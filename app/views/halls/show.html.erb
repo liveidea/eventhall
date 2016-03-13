@@ -34,7 +34,7 @@
       <div class="col-md-6">
 
          <div class="user-info text-center">
-            <%= cl_image_tag @hall.user.avatar.url %>
+            <%= cl_image_tag(@hall.user.avatar.path) %>
             <p><%= @hall.user.phone %></p>
             <%= render 'contact_modal' %>
          </div>
