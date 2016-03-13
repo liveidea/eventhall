@@ -21,6 +21,7 @@
           <% else %>
               <li><%= link_to_unless_current t('languages.uk'), locale: :uk %></li>
           <%end%>
+          
           <li class="team-li"><%= link_to t('nav.our_team'), our_team_path %></li>
         <% if user_signed_in? %>
           <li><%= link_to t('nav.sign_out'), destroy_user_session_path, method: :delete %></li>
