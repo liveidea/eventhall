@@ -3,6 +3,7 @@ en:
   languages:
     en: "English"
     uk: "Українська"
+    de: "Deutsch"
 
 
   activerecord:

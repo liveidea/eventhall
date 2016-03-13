@@ -1,8 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-I18n.available_locales = [:en, :uk]
-config.i18n.default_locale = :uk
+  I18n.available_locales = [:en, :uk, :de]
+  config.i18n.default_locale = :de
   # Code is not reloaded between requests.
   config.cache_classes = true
 

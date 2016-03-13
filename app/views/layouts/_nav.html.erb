@@ -19,7 +19,7 @@
           <% if I18n.locale == I18n.default_locale %>
               <li><%= link_to_unless_current t('languages.en'), locale: :en %></li>
           <% else %>
-               <li><%= link_to_unless_current t('languages.uk'), locale: :uk %></li>
+              <li><%= link_to_unless_current t('languages.uk'), locale: :uk %></li>
           <%end%>
           <li class="team-li"><%= link_to t('nav.our_team'), our_team_path %></li>
         <% if user_signed_in? %>
