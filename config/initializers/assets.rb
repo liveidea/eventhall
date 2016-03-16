@@ -16,4 +16,4 @@ Rails.application.config.assets.precompile += %w( jquery.bxslider.css )
 Rails.application.config.assets.precompile += %w( jquery.bxslider.min.js )
 Rails.application.config.assets.precompile += %w( roman.jpg )
 Rails.application.config.assets.precompile += %w( andrian.jpg )
-
+Rails.application.config.assets.precompile += %w( linked-in.png )
