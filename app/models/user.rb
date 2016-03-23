@@ -1,31 +1,11 @@
 class User < ActiveRecord::Base
+	has_many :halls
 
-  #  mount_uploader :avatar, PhotosUploader
-
-   has_attachment :avatar
-   validates :avatar, presence: true
-
-
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-
-
-  #  validates_integrity_of  :avatar
-  # validates_processing_of :avatar
-
-   has_many :halls
-   # before_save { self.email = email.downcase }
-
-   validates :name, presence: true, length: {in: 2..30}
-
-
-   # validates_format_of :name, :with => /^[-a-z]+$/
-
-    validates :last_name, presence: true, length: {in: 2..40}
-
-
-   validates :phone, numericality: true, length: {maximum: 20}
-
+	has_attachment :avatar
+	validates :avatar, presence: true
+	devise :database_authenticatable, :registerable,
+	:recoverable, :rememberable, :trackable, :validatable
+	validates :name, presence: true, length: {in: 2..30}
+	validates :last_name, presence: true, length: {in: 2..40}
+	validates :phone, numericality: true, length: {maximum: 20}
 end

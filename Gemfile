@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.5'
 gem 'rails-i18n'
 
@@ -9,20 +8,15 @@ group :development do
 end
 
 gem 'sass-rails', '~> 5.0'
-
 gem 'devise'
 gem 'twitter-bootstrap-rails', '~> 3.2', '>= 3.2.2'
 gem 'devise-bootstrap-views'
 gem 'carrierwave'
-gem 'kaminari'
-gem 'bootstrap-kaminari-views'
 gem 'simple_form'
 gem "mini_magick"
 gem 'mail_form'
 gem 'cloudinary'
 gem 'attachinary'
-gem 'globalize', '~> 4.0.3'
-
 
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -32,7 +26,6 @@ gem 'turbolinks'
 gem 'jquery-turbolinks', '~> 0.2.1'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-
 
 group :production do
  gem "pg"

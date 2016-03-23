@@ -26,7 +26,6 @@
 
 
            <div class="description">
-
               <p><%= simple_format @hall.description %></p>
            </div>
       </div> <!-- col-md-6 -->
@@ -34,11 +33,11 @@
       <div class="col-md-6">
 
          <div class="user-info text-center">
-					 <% if @hall.user.avatar.present? %>
-	            <%= cl_image_tag(@hall.user.avatar.path) %>
-						<% else %>
-							<img src="http://placehold.it/100x100">
-						<% end %>
+		<% if @hall.user.avatar.present? %>
+			<%= cl_image_tag(@hall.user.avatar.path) %>
+		<% else %>
+			<img src="http://placehold.it/100x100">
+		<% end %>
 
             <p><%= @hall.user.phone %></p>
             <%= render 'contact_modal' %>

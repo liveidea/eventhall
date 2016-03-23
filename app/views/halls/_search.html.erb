@@ -1,31 +1,26 @@
 
 <div class="search-wrapper clearfix">
-  <div class="search">
-      <%= form_tag(halls_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+	<div class="search">
+		<%= form_tag(halls_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+			<h2><%= t('search.am_searching') %></h2>
 
-            <h2><%= t('search.am_searching') %></h2>
+			<ul class="type">
+				<%= select_tag 'venue_type[]', options_for_select(@venue_type.collect{ |u| [u.name, u.id] }),  {class: "selectpicker", :multiple => true, :data_live_search => true}%>
+			</ul>
 
-            <ul class="type">
+			<h2><%= t('search.for') %></h2>
 
+			<ul class="type">
+				<%= select_tag 'event_type[]', options_for_select(@event_type.collect{ |u| [u.name, u.id] }),  {class: "selectpicker", :multiple => true, :data_live_search => true}%>
+			</ul>
 
-                       <%= select_tag 'venue_type[]', options_for_select(@venue_type.collect{ |u| [u.name, u.id] }),  {class: "selectpicker", :multiple => true, :data_live_search => true}%>
+			<h2><%= t('search.in') %></h2>
 
-            </ul>
+			<div class="type">
+				<%= select_tag "city", options_from_collection_for_select(City.all, "name", "name"), class: "selectpicker" %>
+			</div>
 
-            <h2><%= t('search.for') %></h2>
-
-            <ul class="type">
-
-                 <%= select_tag 'event_type[]', options_for_select(@event_type.collect{ |u| [u.name, u.id] }),  {class: "selectpicker", :multiple => true, :data_live_search => true}%>
-            </ul>
-
-            <h2><%= t('search.in') %></h2>
-
-            <div class="type">
-              <%= select_tag "city", options_from_collection_for_select(City.all, "name", "name"), class: "selectpicker" %>
-            </div>
-
-        <button class="btn btn-primary" type="submit"><%= t('search.search') %></button>
-  <% end %>
-  </div>
+			<button class="btn btn-primary" type="submit"><%= t('search.search') %></button>
+		<% end %>
+	</div>
 </div>

@@ -25,15 +25,22 @@ body {
     padding-top: 60px;
 }
 
-.label {
-    font-size: 1.2em;
-    font-weight: 100;
+
+////// DROPDOWNS //////
+
+.bootstrap-select.btn-group .dropdown-menu {
+  margin-top: -11px;
 }
 
-.btn {
-    border-radius: 2px;
-    font-weight: 600;
+.search-wrapper .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+  width: 220px;
 }
+
+.form .bootstrap-select.btn-group .dropdown-menu {
+  margin-top: 0;
+}
+
+////// BUTTONS //////
 
 .btn-danger {
     background-color: rgba(201, 48, 44, 0.58);
@@ -67,6 +74,21 @@ body {
         border-color: transparent;
     }
 }
+
+.btn {
+    border-radius: 2px;
+    font-weight: 600;
+}
+
+
+
+.label {
+    font-size: 1.2em;
+    font-weight: 100;
+}
+
+
+
 
 
 .thumbnail {
@@ -494,17 +516,6 @@ body {
     }
 }
 
-.bootstrap-select.btn-group .dropdown-menu {
-  margin-top: -11px;
-}
-
-.search-wrapper .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
-  width: 220px;
-}
-
-.form .bootstrap-select.btn-group .dropdown-menu {
-  margin-top: 0;
-}
 
 
 .bx-wrapper .bx-controls-direction a {

@@ -3,18 +3,14 @@ class HallsController < ApplicationController
   before_action :authenticate_user!, :except => [:show, :index, :team]
   before_action :own_hall, only: [:edit, :update]
 
-  respond_to :html, :xml, :json
-
-
   def index
-    @halls = Hall.order(:name).page(params[:page]).per(9)
+    @halls = Hall.order(:name)
     @city = City.all
     @venue_type = VenueType.all
     @event_type = EventType.all
 
     @selected_venue_types = VenueType.where(id: params[:venue_type])
     @selected_event_types = EventType.where(id: params[:event_type])
-
 
       if !params[:city].blank?
         session[:city] = params[:city]
@@ -31,7 +27,6 @@ class HallsController < ApplicationController
         event_types = EventType.where(id: params[:event_type])
         @halls = @halls.joins(:event_types).where(:event_types => {id: event_types})
       end
-
   end
 
   def show
@@ -51,12 +46,10 @@ class HallsController < ApplicationController
      @event_types = EventType.all
   end
 
-
   def create
     @hall = current_user.halls.create(hall_params)
     @cities = City.all
-    # @hall.venue_type_ids = params[:venue_type_ids]
-    # @hall.event_type_ids = params[:event_type_ids]
+
     respond_to do |format|
       if @hall.save
         format.html { redirect_to @hall, notice: t('.notice') }
@@ -94,9 +87,6 @@ class HallsController < ApplicationController
 
   def team
   end
-
-
-
 
   private
     def set_hall

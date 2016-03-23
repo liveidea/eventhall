@@ -2,86 +2,81 @@
 <%= render "search" %>
 
 <% flash.each do |key, value| %>
-	<div class="<%= flash_class(key) %>">
-		<%= value %>
-	</div>
+<div class="<%= flash_class(key) %>">
+<%= value %>
+</div>
 <% end %>
 
 <div class="container-fluid">
 
-        <div class="btn-group">
-            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
-            </span><%= t('index.list') %></a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
-                class="glyphicon glyphicon-th"></span><%= t('index.grid') %></a>
-        </div>
+	<div class="btn-group">
+		 <a href="#" id="list" class="btn btn-default btn-sm">
+			 <span class="glyphicon glyphicon-th-list"></span><%= t('index.list') %>
+		 </a>
+
+		 <a href="#" id="grid" class="btn btn-default btn-sm">
+			<span class="glyphicon glyphicon-th"></span><%= t('index.grid') %>
+		</a>
+	</div>
 
 
-    <span class="<%= 'label label-info' if params[:event_type] || params[:city] || params[:venue_type]  %>">
+	<span class="<%= 'label label-info' if params[:event_type] || params[:city] || params[:venue_type]  %>">
+		<% @selected_venue_types.each do |v| %>
+		<%= v.name %>
+		<% end -%>
 
-          <% @selected_venue_types.each do |v| %>
-            <%= v.name %>
-          <% end -%>
+		<% @selected_event_types.each do |e| %>
+		<%= e.name %>
+		<% end -%>
 
-          <% @selected_event_types.each do |e| %>
-            <%= e.name %>
-          <% end -%>
-
-          <%= params[:city] %>
-    </span> <br><br>
-
-
-    <% if @halls.count == 0 %>
-       <h1> <%= t('index.no_halls') %></h1>
-    <% else %>
-
-        <div class="row list-group" id="products">
-          <% @halls.each do |hall| %>
-            <div class="item col-sm-6 col-md-4">
-              <div class="thumbnail">
-                  <ul class="bxslider">
-                      <% hall.photos.each do |photo| %>
-                          <li><%= cl_image_tag(photo.path, {class: "group list-group-image"} ) %></li>
-                      <% end -%>
-                  </ul>
-                <div class="caption text-center">
-                  <div class="hall-title">
-                    <h3 class="group inner list-group-item-heading"><%= link_to truncate(hall.name, length: 15), hall %></h3>
-                  </div>
-
-                  <h5><%= hall.city.name if hall.city %></h5>
-                  <div id="price">
-                    <p>
-                      ₴ <%= hall.price %>
-                    </p>
-                  </div>
-                  <div class="description col-md-6 pull-right">
-                    <p class="group inner list-group-item-text"><%= truncate(hall.description, length: 200) %></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <% end -%>
-        </div>
-    <% end %>
+		<%= params[:city] %>
+	</span> <br><br>
 
 
+	<% if @halls.count == 0 %>
+		<h1> <%= t('index.no_halls') %></h1>
+	<% else %>
 
+	<div class="row list-group" id="products">
+		<% @halls.each do |hall| %>
+			<div class="item col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<ul class="bxslider">
+						<% hall.photos.each do |photo| %>
+							<li><%= cl_image_tag(photo.path, {class: "group list-group-image"} ) %></li>
+						<% end -%>
+					</ul>
 
+					<div class="caption text-center">
+						<div class="hall-title">
+							<h3 class="group inner list-group-item-heading"><%= link_to truncate(hall.name, length: 15), hall %></h3>
+						</div>
 
-    <%= paginate @halls  %>
+						<h5><%= hall.city.name if hall.city %></h5>
 
-    <br>
+						<div id="price">
+							<p>
+								₴ <%= hall.price %>
+							</p>
+						</div>
 
-
+						<div class="description col-md-6 pull-right">
+							<p class="group inner list-group-item-text"><%= truncate(hall.description, length: 200) %></p>
+						</div>
+					</div> <!-- caption -->
+				</div> <!-- thumbnail -->
+			</div> <!-- item -->
+		<% end -%> <!-- halls -->
+	</div> <!-- row list-group -->
+<% end %>
 
 <script>
-  $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
-  $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
+	$('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
+	$('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
 
-$(document).ready(function(){
-  $('.bxslider').bxSlider();
-});
+	$(document).ready(function(){
+	$('.bxslider').bxSlider();
+	});
 </script>
-
 
 </div> <!-- container -->
