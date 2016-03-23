@@ -1,7 +1,7 @@
 Rails.application.configure do
 
   I18n.available_locales = [:en, :uk]
-  config.i18n.default_locale = :en
+  config.i18n.default_locale = :uk
   config.cache_classes = true
   config.eager_load = true
   config.consider_all_requests_local       = false
