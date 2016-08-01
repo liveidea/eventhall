@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+mount Bootsy::Engine => '/bootsy', as: 'bootsy'
 
   devise_for :users do
      get '/users/sign_out' => 'devise/sessions#destroy'

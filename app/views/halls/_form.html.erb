@@ -31,7 +31,7 @@
 	           <div class="col-md-8">
 	             <div class="form-group">
 	               <%= f.label :description, t('form.description') %>
-	               <%= f.text_area :description, class: "form-control", :rows => "5"  %>
+	               <%= f.bootsy_area :description, class: "form-control", :rows => "5" , editor_options: { link: false, color: false, image: false } %>
 	             </div>
 	           </div>
 	        </div>

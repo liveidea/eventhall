@@ -20,7 +20,7 @@
 //= require jquery.fileupload
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
-
+//= require bootsy
 
 
 $('.selectpicker').selectpicker();
