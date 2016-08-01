@@ -28,6 +28,11 @@
            <div class="description">
               <p><%= simple_format @hall.description %></p>
            </div>
+
+           <div class="social">
+            <a href="https://twitter.com/intent/tweet?source=<%= url_for ([@hall, {only_path: false}]) %>&text=<%= @hall.name %>:<%= url_for ([@hall, {only_path: false}]) %>" target="_blank" title="Tweet"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+             <a href="https://www.facebook.com/sharer/sharer.php?t=<%= @hall.name %>:<%= url_for(action: 'show', controller: '/halls') %>" title="Share on Facebook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+           </div>
       </div> <!-- col-md-6 -->
 
       <div class="col-md-6">
