@@ -90,11 +90,11 @@ class HallsController < ApplicationController
 
   private
     def set_hall
-      @hall = Hall.find(params[:id])
+      @hall = Hall.friendly.find(params[:id])
     end
 
     def own_hall
-      @hall = Hall.find params[:id]
+      @hall = Hall.friendly.find params[:id]
       unless current_user == @hall.user
          redirect_to(@hall, notice: t('.notice') ) and return
       end

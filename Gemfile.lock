@@ -90,6 +90,8 @@ GEM
     execjs (2.7.0)
     factory_girl (4.7.0)
       activesupport (>= 3.0.0)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     http-cookie (1.0.2)
@@ -267,6 +269,7 @@ DEPENDENCIES
   devise
   devise-bootstrap-views
   factory_girl
+  friendly_id (~> 5.1.0)
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks (~> 0.2.1)
