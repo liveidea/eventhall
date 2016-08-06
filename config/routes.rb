@@ -19,6 +19,8 @@ scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
      end
   end
 
+  resources :contacts, only: [:new, :create]
+
   get 'our_team' => 'halls#team'
 end
 
