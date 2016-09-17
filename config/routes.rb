@@ -24,6 +24,4 @@ scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
   get 'our_team' => 'halls#team'
 end
 
-
-
 end
