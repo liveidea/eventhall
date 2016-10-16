@@ -1,5 +1,5 @@
 class HallsController < ApplicationController
-  before_action :set_hall, only: [:show, :edit, :update, :destroy, :checked]
+  before_action :set_hall, only: [:show, :edit, :update, :destroy, :like]
   before_action :authenticate_user!, :except => [:show, :index, :team]
   before_action :own_hall, only: [:edit, :update]
 
@@ -88,6 +88,17 @@ class HallsController < ApplicationController
   def team
   end
 
+  def like
+    like = Like.create(like: params[:like], user: current_user, hall: @hall)
+    if like.valid?
+        flash[:success] = "Success!"
+        redirect_to :back
+    else
+        flash[:error] = "You can only like or dislike hall only once."
+        redirect_to :back
+    end
+  end
+
   private
     def set_hall
       @hall = Hall.friendly.find(params[:id])
@@ -101,6 +112,6 @@ class HallsController < ApplicationController
     end
 
     def hall_params
-       params.require(:hall).permit(:description, :price, :photos, :name, :city, :city_id, :venue_type,  :event_type, :checked_hall, :event_type_ids => [], :venue_type_ids => [], :photos => [] )
+       params.require(:hall).permit(:description, :price, :photos, :name, :city, :city_id, :venue_type,  :event_type, :event_type_ids => [], :venue_type_ids => [], :photos => [] )
     end
 end

@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
+         devise :omniauthable
+
 	has_many :halls
+         has_many :likes
 
 	has_attachment :avatar
 	validates :avatar, presence: true

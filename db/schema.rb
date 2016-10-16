@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160803114803) do
+ActiveRecord::Schema.define(version: 20161016165321) do
 
   create_table "attachinary_files", force: :cascade do |t|
     t.string   "attachinariable_type"
@@ -103,6 +103,14 @@ ActiveRecord::Schema.define(version: 20160803114803) do
     t.integer "venue_type_id"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.boolean  "like"
+    t.integer  "user_id"
+    t.integer  "hall_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.text     "description"
     t.integer  "hall_id"
@@ -127,6 +135,8 @@ ActiveRecord::Schema.define(version: 20160803114803) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "avatar"
+    t.string   "uid"
+    t.string   "provider"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

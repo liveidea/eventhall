@@ -25,6 +25,17 @@
           </ul>
 
 
+          <div class="pull-right likes">
+            <%= link_to like_hall_path(@hall, like: true), method: :post do %>
+              <i class="glyphicon glyphicon-thumbs-up"></i>- <%= @hall.total_likes %>
+            <% end %> &nbsp
+
+           <%= link_to like_hall_path(@hall, like: false), method: :post do %>
+              <i class="glyphicon glyphicon-thumbs-down"></i>- <%= @hall.total_dislikes %>
+            <% end %>
+          </div>
+
+
            <div class="description">
               <p><%= simple_format @hall.description %></p>
            </div>

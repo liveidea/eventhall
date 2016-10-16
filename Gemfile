@@ -21,6 +21,7 @@ gem 'attachinary'
 gem 'bootsy'
 gem 'friendly_id', '~> 5.1.0'
 gem 'puma'
+gem 'omniauth', '~> 1.3', '>= 1.3.1'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'

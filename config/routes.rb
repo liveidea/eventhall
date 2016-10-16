@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 mount Bootsy::Engine => '/bootsy', as: 'bootsy'
 
-  devise_for :users do
-     get '/users/sign_out' => 'devise/sessions#destroy'
-  end
+  # devise_for :users do
+  #    get '/users/sign_out' => 'devise/sessions#destroy'
+  # end
+
+    devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
 
   mount Attachinary::Engine => "/attachinary"
 
@@ -15,7 +17,7 @@ scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
 
   resources :halls do
      member do
-        put :checked
+        post :like
      end
   end
 
